@@ -14,7 +14,7 @@ tags: top index
         <div class="sectionContents">
           <ul class="list01 mb0">
             {% for pages in site.pages %}{% if pages.categories contains 'javascript' %}
-            <li><a href="{{ pages.url }}">{{ pages.title }}</a></li>
+            <li><a href=".{{ pages.url }}">{{ pages.title }}</a></li>
             {% endif %}{% endfor %}
           </ul>
         </div>
@@ -27,7 +27,7 @@ tags: top index
         <div class="sectionContents">
           <ul class="list01 mb0">
             {% for pages in site.pages %}{% if pages.categories contains 'usage' %}
-            <li><a href="{{ pages.url }}">{{ pages.title }}</a></li>
+            <li><a href=".{{ pages.url }}">{{ pages.title }}</a></li>
             {% endif %}{% endfor %}
           </ul>
         </div>
@@ -40,7 +40,7 @@ tags: top index
         <div class="sectionContents">
           <ul class="list01">
             {% for pages in site.pages %}{% if pages.categories contains 'demo' %}
-            <li><a href="{{ pages.url }}">{{ pages.title }}</a></li>
+            <li><a href=".{{ pages.url }}">{{ pages.title }}</a></li>
             {% endif %}{% endfor %}
           </ul>
         </div>
