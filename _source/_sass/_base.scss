@@ -93,7 +93,7 @@ pre {
     font-size: 200%;
     padding: 0 5px 10px;
     margin-bottom: 10px;
-    border-bottom: solid #bdc3c7 2px;
+    border-bottom: solid $silver 2px;
   }
 
   .section {
@@ -110,6 +110,13 @@ pre {
 
       p {
         font-size: 160%;
+        img {
+          width: auto;
+          height: auto;
+          max-width: 100%;
+          max-height: 100%;
+          border: solid $silver 2px;
+        }
       }
       p.pre {
         font-size: 200%;

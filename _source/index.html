@@ -9,6 +9,19 @@ tags: top index
 
       <section class="section mb0">
         <header class="sectionHeader">
+          <h2>JavaScriptの基礎</h2>
+        </header>
+        <div class="sectionContents">
+          <ul class="list01 mb0">
+            {% for pages in site.pages %}{% if pages.categories contains 'javascript' %}
+            <li><a href="{{ pages.url }}">{{ pages.title }}</a></li>
+            {% endif %}{% endfor %}
+          </ul>
+        </div>
+      </section>
+
+      <section class="section mb0">
+        <header class="sectionHeader">
           <h2>jQueryの導入について</h2>
         </header>
         <div class="sectionContents">

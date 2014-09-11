@@ -154,6 +154,7 @@ pre { font-size: 150%; }
 #contents .section .sectionHeader h2 { background-color: #34495e; color: white; }
 #contents .section .sectionContents { position: relative; }
 #contents .section .sectionContents p { font-size: 160%; }
+#contents .section .sectionContents p img { width: auto; height: auto; max-width: 100%; max-height: 100%; border: solid #bdc3c7 2px; }
 #contents .section .sectionContents p.pre { font-size: 200%; }
 #contents .section .sectionContents p.pre a { color: white; }
 #contents .section .sectionContents p.pre a:hover { color: #e74c3c; text-decoration: none; }

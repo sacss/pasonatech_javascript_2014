@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JavaScript基礎 |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../../css/style.css">
+      
+    <script src="../../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+			<h2>JavaScript基礎</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>JavaScript</h3>
+				</header>
+				<div class="sectionContents">
+					<p>JavaScript（ジャバスクリプト）は、今回勉強する範囲では主にWebブラウザ上で動作するスクリプト言語。</p>
+					<p>現在はサーバーサイドでも使われるようになったり（<a href="http://nodejs.org/">node.js</a>）、用途は様々。</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>JavaScriptをページで利用するために</h3>
+				</header>
+				<div class="sectionContents">
+					<p>JavaScriptを勉強するにあたり、JavaScriptをHTML内で使う方法を先に学んでおきます。</p>
+					<h4>１，HTMLファイルに直接書く</h4>
+					<pre><code class="language-markup">&lt;script&gt;〜&lt;/script&gt;</code></pre>
+					<p>scriptタグ内にJavaScriptのコードを書くことで利用できます。</p>
+
+					<h4>２，JavaScriptファイルとして読み込む</h4>
+					<pre><code class="language-markup">&lt;script src="js/my_script.js"&gt;&lt;/script&gt;</code></pre>
+					<p>基本的にはこちらで利用します。１のHTMLに直接書く方法だと、作業者が分離しにくく、HTMLタグとスクリプトが混在してしまうため、メンテナンス性に欠けてしまうため。</p>
+					<p>※ しかし、HTMLファイルと別途で読み込みを行うため、読み込み速度面でのみみると１のほうが早いため、ケース・バイ・ケースで使い分けるのが良いです。</p>
+					<h4>例：Google Analytics の解析コードなど</h4>
+					<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;例示&lt;/title&gt;
+  〜
+  
+&lt;script&gt;
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-xxxxxxxx-x', 'auto');
+  ga('send', 'pageview');
+&lt;/script&gt;
+
+&lt;/head&gt;
+&lt;body&gt;
+  〜〜
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>早速使ってみる</h3>
+				</header>
+				<div class="sectionContents">
+					<p>Google Chrome や Firefox などのブラウザコンソール（開発環境のコンソール）で簡単にコードの実行ができるので試してみましょう</p>
+					<p class="text-c"><img src="../img/capture01.jpg" alt=""></p>
+					<h4>以下のコードを入力してみましょう</h4>
+					<pre><code class="language-javascript">alert</code></pre>
+					<pre><code class="language-javascript">alert('アラート');</code></pre>
+					<pre><code class="language-javascript">alert(1 + 1);</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>実際に入力するところを見ながら覚える基礎</h3>
+				</header>
+				<div class="sectionContents">
+					<ul class="mb50">
+						<li>プライマリ (プリミティブ) データ型：真偽値（Boolean）、数値（Number）、文字列（String）</li>
+						<li>複合データ型：オブジェクト（Object）・・・データその物を表す基本的な抽象的な概念
+							、配列などなど</li>
+						<li>特別なデータ型：Null、未定義（undefined）</li>
+						<li>変数</li>
+						<li>四則計算（+,-,*,/,%・・・数値の足し算、文字列の足し算）</li>
+						<li>関数（function()など）</li>
+						<li>繰り返し（forループ）</li>
+						<li>DOM Scripting</li>
+					</ul>
+				</div>
+			</section>
+    </div>
+  </div>
+
+
+<script src="../../js/lib/prism.js"></script>
+  </body>
+</html>

@@ -1,6 +1,12 @@
 <!DOCTYPE html>
 <html lang="ja">
 
+{% if page.categories contains "top" %}
+{% assign path = '../' %}
+{% else %}
+{% assign path = '../../' %}
+{% endif %}
+
 {% include head.html %}
   <body>
 
