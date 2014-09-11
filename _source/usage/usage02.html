@@ -1,0 +1,27 @@
+---
+layout: default
+title: jQueryを使うための準備
+jqv: false
+script_head: true
+categories: usage
+tags: oneself
+---
+
+			<h2>jQueryを使うための準備</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>jQueryを使うための準備</h3>
+				</header>
+				<div class="sectionContents">
+					<p>jQueryを使うためには、jQueryの本体ファイルを最初に読み込んでおく必要がある。</p>
+					<h4>ダウンロード</h4>
+					<p><a href="http://jquery.com/">jQueryを配布している公式サイト</a>へ行き、ダウンロードをしてくる。使うだけであれば、基本的には<strong>compressed, production</strong>と書かれた、圧縮されたファイルを利用しましょう。</p>
+					<p>HTMLのscript要素で読み込みの指定</p>
+					<pre><code class="language-javascript">&lt;script src="jquery.js"&gt;&lt;/script&gt;</code></pre>
+					<h4>CDN</h4>
+					<p><strong class="red">C</strong>ontent <strong class="red">D</strong>elivery <strong class="red">N</strong>etwork</p>
+					<p>GoogleやMicrosoftのサーバー上にあり、ダウンロードしなくても直接ファイルを読み込むことが可能なサービス。</p>
+					<pre><code class="language-javascript">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/x.x.x/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+				</div>
+			</section>

@@ -1,0 +1,56 @@
+---
+layout: default
+title: jQueryとは
+jqv: false
+script_head: true
+categories: usage
+tags: oneself
+---
+
+			<h2>jQueryとは</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>jQueryとは</h3>
+				</header>
+				<div class="sectionContents">
+					<p>簡単で簡潔な記述で様々な機能や効果を付けられるようになる、<strong>JavaScriptのライブラリ</strong>です。</p>
+					<p>The Write Less, Do More, JavaScript Library<br />（少ない記述でより多くのことを行うためのJavaScriptライブラリ）</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>JavaScriptとjQuery</h3>
+				</header>
+				<div class="sectionContents">
+					<h4>JavaScript</h4>
+					<p>divのclassがinnerの要素の横幅を10%に変更するJavaScriptを書くとき。</p>
+					<pre><code class="language-javascript">var elements =  document.getElementsByTagName('div'); // 要素を取得して
+for(var i = 0; i &lt; elements.length; i++) { // 要素から抽出するためにループ
+	if(elements[i].className === 'inner') { // class名がinnerを抽出
+		elements[i].style.width = '10%'; // 横幅のスタイルを10%に
+	}
+};</code></pre>
+					<h4>jQuery</h4>
+					<p>JavaScriptよりも短く書ける。</p>
+					<pre><code class="language-javascript">$('<span>div.inner</span>').css('width','10%');</code></pre>
+					<p>横幅のサイズ変更であればこんな書き方もできる。</p>
+					<pre><code class="language-javascript">$('<span>div.inner</span>').width('10%');</code></pre>
+					<p>セレクタの指定も様々</p>
+					<pre><code class="language-javascript">$('<span>div</span>').filter('<span>.inner</span>').width('10%');</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>jQueryを使うメリット</h3>
+				</header>
+				<div class="sectionContents">
+					<ul class="mb50">
+						<li>CSSと近い感覚でHTML要素の取得が可能になる<br /><span class="fontSize8 pink">⇒ デザイナー・コーダーでも扱いやすい</span></li>
+						<li>クロスブラウザに対応した様々な機能をつけられる<br /><span class="fontSize8 pink">⇒ ブラウザ毎の差異を気にしなくてもOK</span></li>
+						<li>軽量かつ高速</li>
+					</ul>
+				</div>
+			</section>

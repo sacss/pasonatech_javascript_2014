@@ -1,0 +1,50 @@
+/* --------------------------------------------------
+ component
+ --------------------------------------------------*/
+
+// ----------------------------------------
+// position & text compornent
+// ----------------------------------------
+
+.f-l { float: left; }
+.f-r { float: right; }
+.f-n { float: none; }
+.text-l{ text-align: left; }
+.text-r{ text-align: right; }
+.text-c { text-align: center; }
+.bold{
+  font-weight: bold !important;
+}
+
+// ----------------------------------------
+// margin & padding component
+// ----------------------------------------
+
+@for $i from 0 through 10 {
+  .mt#{ $i * 5 } { margin-top: #{ $i * 5 }px !important; }
+  .mr#{ $i * 5 } { margin-right: #{ $i * 5 }px !important; }
+  .mb#{ $i * 5 } { margin-bottom: #{ $i * 5 }px !important; }
+  .ml#{ $i * 5 } { margin-left: #{ $i * 5 }px !important; }
+  .pt#{ $i * 5 } { padding-top: #{ $i * 5 }px !important; }
+  .pr#{ $i * 5 } { padding-right: #{ $i * 5 }px !important; }
+  .pb#{ $i * 5 } { padding-bottom: #{ $i * 5 }px !important; }
+  .pl#{ $i * 5 } { padding-left: #{ $i * 5 }px !important; }
+}
+
+.m0 {
+  margin: 0 !important;
+}
+
+.p0 {
+  padding: 0 !important;
+}
+
+/*-------------------------------------------------
+  color
+---------------------------------------------------*/
+.black {color: $black01 !important;}
+.green {color: $green !important;}
+.blue {color: $blue02 !important;}
+.red {color: $red !important;}
+.pink {color: $pink !important;}
+.orange {color: $orange !important;}

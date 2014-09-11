@@ -1,0 +1,23 @@
+---
+layout: default
+title: 自己紹介
+jqv: false
+script_head: ttoprue
+categories: introduction
+tags: oneself
+---
+
+      <section class="section">
+        <header class="sectionHeader">
+          <h2>自己紹介</h2>
+        </header>
+        <div class="sectionContents">
+          <ul class="list01">
+            {% for pages in site.pages %}{% if page.categories == introduction %}{% include script.html %}{% endif %}
+              <li><a href="{{ pages.url }}">{{ pages.title }}：{{ pages.url }}</a></li>
+            {% endfor %}
+            <li><a href="introduction01.html">自己紹介</a></li>
+            <li><a href="introduction02.html">今後のSaCSS予定</a></li>
+          </ul>
+        </div>
+      </section>

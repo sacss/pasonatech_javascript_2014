@@ -1,0 +1,221 @@
+---
+layout: default
+title: セレクターデモ
+jqv: false
+script_head: true
+categories: demo
+tags: demo
+---
+<script type="text/javascript">
+jQuery(function($) {
+	'use strict';
+
+	var $demo = $('#demo')
+		$idSelect = $('#select'),
+		$idDel = $('#del');
+		classSupport = $('.support:gt(2)');
+	$idSelect.val('');
+	$idDel.fadeOut(0);
+	classSupport.hide();
+	$demo.on('keyup', '#select', function(){
+		var thisLength = $(this).val().length;
+		if(thisLength > 0){
+			$idDel.fadeIn('fast');
+		}else{
+			$idDel.fadeOut('fast');
+		}
+	});
+	$demo.on('click', '#del', function(){
+		$idSelect.val('');
+		$idDel.fadeOut('slow');
+	});
+
+	$demo.on('click', '#submit', function(){
+		var inputScript = $idSelect.val();
+		if(inputScript){
+			eval(inputScript); //よいこのみんなは真似しないように
+			return false;
+		}else{
+			alert('空っぽ');
+		}
+	});
+	$demo.on('click', '#clear', function(){
+		$demo.find('*').not('#del, #select, .support').removeAttr('style');
+	});
+	$demo.on('click', '#clearClass', function(){
+		$('.pink').removeClass('pink');
+		$('.blue').removeClass('blue');
+		$('.red').removeClass('red');
+	});
+	var check1 = /\$/,
+			check2 = /\;/;
+	$('.support:eq(0)').click(function(){
+		var inputScript = $idSelect.val();
+		if(!check1.test(inputScript)){
+			var support = "$('')" + inputScript;
+			$idSelect.val(support);
+			idDel.fadeTo('fast',1);
+		};
+	});
+	$('.support:eq(1)').click(function(){
+		var inputScript = $idSelect.val();
+		if(!check2.test(inputScript)){
+			var support = inputScript + ".css({});";
+			$idSelect.val(support);
+			$idDel.fadeIn('fast');
+		};
+	});
+	$('.support:eq(2)').click(function(){
+		var inputScript = $idSelect.val();
+		if(!check2.test(inputScript)){
+			var support = inputScript + ".addClass('');";
+			$idSelect.val(support);
+			$idDel.fadeIn('fast');
+		};
+	});
+});
+</script>
+
+
+<h2>セレクターデモ</h2>
+<div id="demo">
+<p id="selectP"><textarea id="select"></textarea><button id="del">×</button></p>
+<p><button id="submit">実行</button><button id="clearClass">classクリア</button><button id="clear">スタイルクリア</button><button class="support">どこを？</button><button class="support">CSS</button><button class="support">addClass</button></p>
+
+<div id="tableDemo">
+<h3 class="mb0">Table01</h3>
+<table id="table01">
+	<tr class="first-child">
+		<td class="first-child">TD01</td><td>TD02</td><td>TD03</td><td>TD04</td><td class="last-child">TD05</td>
+	</tr>
+	<tr>
+		<td class="first-child">TD06</td><td>TD07</td><td>TD08</td><td>TD09</td><td class="last-child">TD10</td>
+	</tr>
+	<tr>
+		<td class="first-child">TD11</td><td>TD12</td><td>TD13</td><td>TD14</td><td class="last-child">TD15</td>
+	</tr>
+	<tr>
+		<td class="first-child">TD16</td><td>TD17</td><td>TD18</td><td>TD19</td><td class="last-child">TD20</td>
+	</tr>
+	<tr class="last-child">
+		<td class="first-child">TD21</td><td>TD22</td><td>TD23</td><td>TD24</td><td class="last-child">TD25</td>
+	</tr>
+</table>
+
+<h3 class="mb0">Table02</h3>
+<table id="table02">
+	<tr class="first-child">
+		<td class="first-child">TD01</td><td>TD02</td><td>TD03</td><td>TD04</td><td class="last-child">TD05</td>
+	</tr>
+	<tr>
+		<td class="first-child">TD06</td><td>TD07</td><td>TD08</td><td>TD09</td><td class="last-child">TD10</td>
+	</tr>
+	<tr>
+		<td class="first-child">TD11</td><td>TD12</td><td>TD13</td><td>TD14</td><td class="last-child">TD15</td>
+	</tr>
+	<tr>
+		<td class="first-child">TD16</td><td>TD17</td><td>TD18</td><td>TD19</td><td class="last-child">TD20</td>
+	</tr>
+	<tr class="last-child">
+		<td class="first-child">TD21</td><td>TD22</td><td>TD23</td><td>TD24</td><td class="last-child">TD25</td>
+	</tr>
+</table>
+</div>
+
+<div id="listDemo">
+
+	<div class="column">
+		<h3 class="mb0">List01</h3>
+		<ul id="list01">
+			<li class="first-child">LI01</li>
+			<li>LI02</li>
+			<li>LI03</li>
+			<li>LI04</li>
+			<li>LI05</li>
+			<li>LI06</li>
+			<li>LI07</li>
+			<li>LI08</li>
+			<li>LI09</li>
+			<li class="first-child">LI10</li>
+		</ul>
+	</div>
+
+	<div class="column">
+		<h3 class="mb0">List02</h3>
+		<ul id="list02">
+			<li class="first-child">LI01</li>
+			<li>LI02</li>
+			<li>LI03</li>
+			<li>LI04</li>
+			<li>LI05</li>
+			<li>LI06</li>
+			<li>LI07</li>
+			<li>LI08</li>
+			<li>LI09</li>
+			<li class="first-child">LI10</li>
+		</ul>
+	</div>
+
+	<div class="column">
+		<h3 class="mb0">List03</h3>
+		<ul id="list03">
+			<li class="first-child">LI01</li>
+			<li>LI02</li>
+			<li>LI03</li>
+			<li>LI04</li>
+			<li>LI05</li>
+			<li>LI06</li>
+			<li>LI07</li>
+			<li>LI08</li>
+			<li>LI09</li>
+			<li class="first-child">LI10</li>
+		</ul>
+	</div>
+</div>
+
+<div id="listDemo2">
+
+	<div class="column">
+		<h3 class="mb0">List04</h3>
+		<ul id="list01">
+			<li class="first-child">LI01</li>
+			<li>LI02</li>
+			<li>LI03</li>
+			<li>LI04</li>
+			<li>LI05</li>
+			<li class="first-child">LI06</li>
+		</ul>
+	</div>
+
+	<div class="column">
+		<h3 class="mb0">List05</h3>
+		<ul id="list02">
+			<li class="first-child">LI01</li>
+			<li>LI02</li>
+			<li>LI03</li>
+			<li>LI04</li>
+			<li>LI05</li>
+			<li>LI06</li>
+			<li>LI07</li>
+			<li>LI08</li>
+			<li>LI09</li>
+			<li class="first-child">LI10</li>
+		</ul>
+	</div>
+
+	<div class="column">
+		<h3 class="mb0">List06</h3>
+		<ul id="list03">
+			<li class="first-child">LI01</li>
+			<li>LI02</li>
+			<li>LI03</li>
+			<li>LI04</li>
+			<li>LI05</li>
+			<li>LI06</li>
+			<li class="first-child">LI07</li>
+		</ul>
+	</div>
+</div>
+
+
+</div><!-- //#demo -->

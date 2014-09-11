@@ -1,0 +1,49 @@
+---
+layout: default
+title: 記述方法
+jqv: false
+script_head: true
+categories: usage
+tags: oneself
+---
+
+			<h2>記述方法</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>要素を選択して何かを行う</h3>
+				</header>
+				<div class="sectionContents">
+					<p>// Your Code hereの部分に書いていく</p>	
+					<pre><code class="language-javascript">$('セレクタ').メソッド();</code></pre>
+					<p>基本は（HTML中の）<strong class="pink">どの要素を：$('セレクタ')</strong>、 <strong class="blue">どうするか：.メソッド()</strong>。</p>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>セレクタ</h3>
+				</header>
+				<div class="sectionContents">
+					<p>基本的にはCSSを同じ</p>	
+					<pre><code class="language-javascript">$('<span>#id</span>')</code></pre>
+					<p>セレクタの指定はJavaScriptの実行速度にも関わってくる部分なので、ピンポイント箇所を指定する場合はできるだけid名を指定すること。</p>
+					<p>他にも様々あるが、最初はidとclass、要素名などだけを覚えておけば問題ない</p>
+					<pre><code class="language-javascript">$('<span>.class</span>')</code></pre>
+					<pre><code class="language-javascript">$('<span>tagName</span>')</code></pre>
+					<p>親子関係なども取得可能。CSSと同じ</p>
+					<pre><code class="language-javascript">$('<span>#id .class</span>')</code></pre>
+					<pre><code class="language-javascript">$('<span>#id > .class</span>')</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>メソッド</h3>
+				</header>
+				<div class="sectionContents">
+					<p>メソッドとは，あるオブジェクトに対して実行する関数を指します。</p>	
+					<p>数が膨大で覚えきれないというのが本音です。使い方はできる限り公式サイトや解説サイトなどで確認するようにしましょう。</p>
+					<p><a href="http://api.jquery.com/">jQuery API</a></p>		
+				</div>
+			</section>

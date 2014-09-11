@@ -1,0 +1,35 @@
+---
+layout: default
+title: toggle
+jqv: false
+script_head: true
+categories: demo
+tags: demo
+---
+
+<script type="text/javascript">
+jQuery(function($){
+	$('button').click(function(){
+		$('#sample').toggle();
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('button').click(function(){
+		$('#sample').toggle();
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-javascript">&lt;button&gt;クリックで#sampleを消えたり出たり&lt;/button&gt;
+&lt;p id="sample"&gt;ここが消えたりでたり&lt;/p&gt;
+&lt;p id="hidebu"&gt;ここは消えない&lt;/p&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo">
+<button>クリックで#sampleが消えたり出たり</button>
+<p id="sample">ここが消えたりでたり</p>
+<p id="hidebu">ここは消えない</p>
+</div>

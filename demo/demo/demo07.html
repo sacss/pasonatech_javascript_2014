@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>mouseenter/mluseleave |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="/css/style.css">
+      
+    <script src="/js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="/">jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+<script type="text/javascript">
+jQuery(function($){
+	$('#demo > div:odd').hide();
+	$('#demo > div:even').on('mouseenter',function(){
+		$(this).next().slideDown();
+	}).on('mouseleave',function(){
+		$(this).next().slideUp();
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('#demo > div:odd').hide();
+	$('#demo > div:even').on('mouseenter',function(){
+		$(this).next().slideDown();
+	}).on('mouseleave',function(){
+		$(this).next().slideUp();
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-javascript">&lt;div id="demo"&gt;
+&lt;div&gt;表示１&lt;/div&gt;
+&lt;div&gt;出てくる１&lt;/div&gt;
+&lt;div&gt;表示２&lt;/div&gt;
+&lt;div&gt;出てくる２&lt;/div&gt;
+&lt;div&gt;表示３&lt;/div&gt;
+&lt;div&gt;出てくる３&lt;/div&gt;
+&lt;div&gt;表示４&lt;/div&gt;
+&lt;div&gt;出てくる４&lt;/div&gt;
+&lt;div&gt;表示５&lt;/div&gt;
+&lt;div&gt;出てくる５&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo">
+<div>表示１</div>
+<div>出てくる１</div>
+<div>表示２</div>
+<div>出てくる２</div>
+<div>表示３</div>
+<div>出てくる３</div>
+<div>表示４</div>
+<div>出てくる４</div>
+<div>表示５</div>
+<div>出てくる５</div>
+
+    </div>
+  </div>
+
+
+<script src="/js/lib/prism.js"></script>
+  </body>
+</html>

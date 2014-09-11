@@ -1,0 +1,51 @@
+---
+layout: default
+title: アコーディオン（all div）
+jqv: false
+script_head: true
+categories: demo
+tags: demo
+---
+<script type="text/javascript">
+jQuery(function($){
+	$('#demo > div:odd').hide();
+	$('#demo > div:even').click(function(){
+		$(this).next().slideToggle();
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('#demo > div:odd').hide();
+	$('#demo > div:even').click(function(){
+		$(this).next().slideToggle();
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-javascript">&lt;div id="demo"&gt;
+&lt;div&gt;表示１&lt;/div&gt;
+&lt;div&gt;出てくる１&lt;/div&gt;
+&lt;div&gt;表示２&lt;/div&gt;
+&lt;div&gt;出てくる２&lt;/div&gt;
+&lt;div&gt;表示３&lt;/div&gt;
+&lt;div&gt;出てくる３&lt;/div&gt;
+&lt;div&gt;表示４&lt;/div&gt;
+&lt;div&gt;出てくる４&lt;/div&gt;
+&lt;div&gt;表示５&lt;/div&gt;
+&lt;div&gt;出てくる５&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo">
+<div>表示１</div>
+<div>出てくる１</div>
+<div>表示２</div>
+<div>出てくる２</div>
+<div>表示３</div>
+<div>出てくる３</div>
+<div>表示４</div>
+<div>出てくる４</div>
+<div>表示５</div>
+<div>出てくる５</div>

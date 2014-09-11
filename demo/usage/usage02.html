@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>jQueryを使うための準備 |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="/css/style.css">
+      
+    <script src="/js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="/">jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+			<h2>jQueryを使うための準備</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>jQueryを使うための準備</h3>
+				</header>
+				<div class="sectionContents">
+					<p>jQueryを使うためには、jQueryの本体ファイルを最初に読み込んでおく必要がある。</p>
+					<h4>ダウンロード</h4>
+					<p><a href="http://jquery.com/">jQueryを配布している公式サイト</a>へ行き、ダウンロードをしてくる。使うだけであれば、基本的には<strong>compressed, production</strong>と書かれた、圧縮されたファイルを利用しましょう。</p>
+					<p>HTMLのscript要素で読み込みの指定</p>
+					<pre><code class="language-javascript">&lt;script src="jquery.js"&gt;&lt;/script&gt;</code></pre>
+					<h4>CDN</h4>
+					<p><strong class="red">C</strong>ontent <strong class="red">D</strong>elivery <strong class="red">N</strong>etwork</p>
+					<p>GoogleやMicrosoftのサーバー上にあり、ダウンロードしなくても直接ファイルを読み込むことが可能なサービス。</p>
+					<pre><code class="language-javascript">&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/x.x.x/jquery.min.js"&gt;&lt;/script&gt;</code></pre>
+				</div>
+			</section>
+    </div>
+  </div>
+
+
+<script src="/js/lib/prism.js"></script>
+  </body>
+</html>

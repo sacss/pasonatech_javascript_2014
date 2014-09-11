@@ -1,0 +1,7 @@
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>{% if page.categories contains "top" %}JavaScript &amp;jQuery Study{% else %}{{ page.title }} |  JavaScript&amp; jQuery Study{% endif %}</title>
+  <link rel="stylesheet" href="/css/style.css">
+  {% if page.script_head == true %}{% include script.html %}{% endif %}
+</head>

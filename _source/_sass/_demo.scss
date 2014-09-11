@@ -1,0 +1,130 @@
+#demo {
+  table{
+    width: 100%;
+    border-collapse: collapse;
+    border:solid #999999;
+    border-width: 1px 0 0 1px;
+  }
+  td{
+    border:solid #999999;
+    border-width: 0 1px 1px 0;
+    background-color: $clouds;
+    font-size: 154%;
+    text-align:center;
+    padding:15px 0;
+  }
+  .red{
+    background-color:#ff0000;
+    color:#ffffff !important;
+  }
+  .blue{
+    background-color:#0000ff;
+    color:#ffffff !important;
+  }
+  .pink{
+    background-color:#ff1493;
+    color:#ffffff !important;
+  }
+
+  input,textarea{
+    font-size: 300%;
+    padding:5px;
+  }
+
+  button{
+    margin:5px 10px 0 0;
+    font-size: 154%;
+    height: 50px;
+    line-height: 45px;
+    vertical-align: middle;
+    border: none;
+    background-color: $concreat;
+    color: $white;
+    @include border-radius(5px);
+    &:hover {
+      background-color: $asbestos;
+    }
+  }
+  #submit {
+    background-color: $pink;
+    color: $white;
+  }
+}
+
+#select{
+  width: 100%;
+  height:1.2em;
+}
+
+#listDemo{
+  overflow:hidden;
+
+  .column{
+    width:33%;
+    float:left;
+    margin:0 0.5% 0 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  ul{
+    border: 1px solid #999999;
+    padding: 10px;
+    background-color: $clouds;
+  }
+  li{
+    list-style-type:none;
+    font-size: 154%;
+  }
+}
+
+#listDemo2{
+  overflow:hidden;
+
+  .column{
+    width:33%;
+    float:left;
+    margin:0 0.5% 0 0;
+    &:last-child {
+      margin: 0;
+    }
+  }
+  ul{
+    border: 1px solid #999999;
+    padding: 10px;
+    background-color: $clouds;
+  }
+  li{
+    list-style-type:none;
+    font-size: 154%;
+  }
+}
+
+#selectP{
+  position: relative;
+}
+#del{
+  position: absolute;
+  width: 50px;
+  top: 0;
+  right:-15px;
+  font-size: 225%;
+  @include border-radius(5px);
+}
+#toTop a{
+  display:block;
+  position:fixed;
+  padding: 10px;
+  bottom:0;
+  right:0;
+  background: #202020;
+  color: #fff;
+  -moz-border-radius-topleft:10px;
+  -webkit-border-top-left-radius:10px;
+  opacity:0.6;
+  text-decoration:none;
+
+  &:hover{
+    opacity:1;
+  }
+}

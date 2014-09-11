@@ -1,0 +1,50 @@
+<script type="text/javascript">
+jQuery(function($){
+	$('.none').hide();
+	$('.panel').click(function(){
+		$(this).next().toggle();
+	});
+	$('button').click(function(){
+		$(".none").toggle();
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('.none').hide();
+	$('.panel').click(function(){
+		$(this).next().toggle();
+	});
+	$('button').click(function(){
+		$(".none").toggle();
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-javascript">&lt;div id="demo"&gt;
+&lt;div class="panel"&gt;表示１&lt;/div&gt;
+&lt;div class="none"&gt;出てくる１&lt;/div&gt;
+&lt;div class="panel"&gt;表示２&lt;/div&gt;
+&lt;div class="none"&gt;出てくる２&lt;/div&gt;
+&lt;div class="panel"&gt;表示３&lt;/div&gt;
+&lt;div class="none"&gt;出てくる３&lt;/div&gt;
+&lt;div class="panel"&gt;表示４&lt;/div&gt;
+&lt;div class="none"&gt;出てくる４&lt;/div&gt;
+&lt;div class="panel"&gt;表示５&lt;/div&gt;
+&lt;div class="none"&gt;出てくる５&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo">
+<div class="panel">表示１</div>
+<div class="none">出てくる１</div>
+<div class="panel">表示２</div>
+<div class="none">出てくる２</div>
+<div class="panel">表示３</div>
+<div class="none">出てくる３</div>
+<div class="panel">表示４</div>
+<div class="none">出てくる４</div>
+<div class="panel">表示５</div>
+<div class="none">出てくる５</div>
+<button>全部</button>

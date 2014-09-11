@@ -1,0 +1,35 @@
+---
+layout: default
+title: clickデモ
+jqv: false
+script_head: true
+categories: demo
+tags: demo
+---
+
+<script type="text/javascript">
+jQuery(function($){
+	$('button').click(function(){
+		$('#sample').hide();
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('button').click(function(){
+		$('#sample').hide();
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-javascript">&lt;button&gt;クリックで#sampleを消します&lt;/button&gt;
+&lt;p id="sample"&gt;ここが消えます&lt;/p&gt;
+&lt;p id="hidebu"&gt;ここは消えない&lt;/p&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo">
+<button>クリックで#sampleを消します</button>
+<p id="sample">ここが消えます</p>
+<p id="hidebu">ここは消えない</p>
+</div>

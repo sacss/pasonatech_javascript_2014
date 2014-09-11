@@ -1,0 +1,42 @@
+---
+layout: default
+title: animateデモ
+jqv: false
+script_head: true
+categories: demo
+tags: demo
+---
+
+<script type="text/javascript">
+jQuery(function($){
+	$('button','#demo').click(function(){
+		$('div','#demo').animate({
+			width:"800px",
+			padding:"50px"
+		},3000);
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('button','#demo').click(function(){
+		$('div','#demo').animate({
+			width:"800px",
+			padding:"50px"
+		},3000);
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-javascript">&lt;button&gt;GO!&lt;/button&gt;
+&lt;div&gt;アニメーション&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo">
+<button>GO!</button>
+<div>アニメーション</div>
+</div>
+<p>これまでのアニメーション</p>
+<p>数値型の値をとらない属性（backgroundColor,colorなど）はanimate関数非対応</p>
+

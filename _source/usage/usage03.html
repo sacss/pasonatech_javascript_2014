@@ -1,0 +1,89 @@
+---
+layout: default
+title: jQueryを読み込む場所
+jqv: false
+script_head: true
+categories: usage
+tags: oneself
+---
+
+			<h2>jQueryを読み込む場所</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>headで読み込む場合</h3>
+				</header>
+				<div class="sectionContents">
+					<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;jQuery&lt;/title&gt;
+  <span>&lt;script src="jquery.js"&gt;&lt;/script&gt;</span>
+  &lt;script src="my_script.js"&gt;&lt;/script&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  〜〜
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					<h4>my_script.js</h4>
+					<pre><code class="language-javascript">$(document).ready(function(){
+  // Your code here
+});</code></pre>
+					<p>もしくは</p>
+					<pre><code class="language-javascript">$(function(){
+  // Your code here
+});</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>bodyの終了直前で読み込む場合</h3>
+				</header>
+				<div class="sectionContents">
+					<pre><code class="language-markup">&lt;!DOCTYPE html&gt;
+&lt;html lang="ja"&gt;
+&lt;head&gt;
+  &lt;meta charset="UTF-8"&gt;
+  &lt;title&gt;jQuery&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+  〜〜
+<span>&lt;script src="jquery.js"&gt;&lt;/script&gt;</span>
+&lt;script src="my_script.js"&gt;&lt;/script&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+					<h4>my_script.js</h4>
+					<pre><code class="language-javascript">// Your code here</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>カプセル化と衝突の回避</h3>
+				</header>
+				<div class="sectionContents">
+					<p>jQueryでは、"<strong class="red">jQuery</strong>"という変数に機能をつける仕組みをとっている。"<strong class="red">jQuery</strong>"という変数を毎回書くのは記述が長くなってしまうので、省略して書けるようになっている。それが"<strong class="red">$</strong>"である。</p>	
+					<pre><code class="language-javascript">jQuery === $</code></pre>
+					<p>しかし他のライブラリでも"<strong class="red">$</strong>"を機能として使っている場合がある。同時に指定された場合などで影響がでる可能性があるために、どんな場合でも問題なく利用できるために、カプセル化（隠蔽）しておく必要がある。</p>
+					<h4>カプセル化</h4>
+					<pre><code class="language-javascript">(function($){
+  // Your code here
+})(jQuery);</code></pre>
+					<p>最初の($)を一番最後の(jQuery)として認識させます。</p>
+					<h4>DOM Readyでの実行の場合</h4>
+					<pre><code class="language-javascript">jQuery(function($){
+  // Your code here
+});</code></pre>
+					<p>これは下記の省略形</p>
+					<pre><code class="language-javascript">jQuery(document).ready(function($){
+  // Your code here
+});</code></pre>
+					<p>最初はよくわからないかもしれませんが、慣れないうちは、HTML中のどこで指定したとしても</p>
+					<pre><code class="language-javascript">jQuery(function($){
+  // Your code here
+});</code></pre>
+					<p>これを最初に書いて、// Your code hereの部分に必要なコードを書いていくようにしましょう。</p>
+				</div>
+			</section>
