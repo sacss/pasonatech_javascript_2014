@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JavaScript基礎：数値と文字列 |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+			<h2>JavaScript基礎：数値と文字列</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>数値と文字列</h3>
+				</header>
+				<div class="sectionContents">
+					<p>数値は半角の数値、計算などで利用可能</p>
+
+					<pre><code class="language-javascript">1
+2
+3
+10
+100
+-10</code></pre>
+
+					<p>文字列、シングルクォーテーションもしくはダブルクォーテーションで囲まれている</p>
+
+					<pre><code class="language-javascript">'あ'
+'あいうえお'
+'abcde'
+'12345'</code></pre>
+
+					<p>数値の1と文字列の'1'、パッとみて同じにみえても違うもの。</p>
+					<p>足し算をしてみるとわかる</p>
+					<pre><code class="language-javascript">1 + 1 // 2
+'1' + '1' // '11'
+1 + '1' // '11'</code></pre>
+					<p>数値 + 数値 は計算、 文字列 + 文字列 は文字の連結、 数値 + 文字列 は 文字列同士の計算と同じ</p>
+
+					<h4>補足問題</h4>
+					<p>以下の結果はどうなるか</p>
+					<pre><code class="language-javascript">1 + 1 + '1'
+1 + '1' + 1
+'1' + 1 + 1</code></pre>
+				</div>
+			</section>
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>

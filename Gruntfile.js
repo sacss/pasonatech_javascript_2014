@@ -6,19 +6,10 @@ module.exports = function(grunt) {
 
     // jekyll (for HTML)
     jekyll: {
-      server : {
-        options: {
-          src : '_source',
-          dest: './demo',
-          server : true,
-          server_port : 4000,
-          auto : true
-        }
-      },
       dev: {
         options: {
           src: '_source',
-          dest: './demo'
+          dest: 'demo'
         }
       }
     },
@@ -48,13 +39,32 @@ module.exports = function(grunt) {
         files: ['_source/_sass/*.scss'],
         tasks: ['compass:dev']
       }
+    },
+
+    browserSync: {
+      dev: {
+        bsFiles: {
+          src : [
+            'demo/**/*.css',
+            'demo/**/*.js',
+            'demo/**/*.html'
+          ]
+        },
+        options: {
+          watchTask: true,
+          server: {
+            baseDir: 'demo/'
+          }
+        }
+      }
     }
   });
 
-  grunt.registerTask('default', ['jekyll:dev', 'compass:dev']);
+  grunt.registerTask('default', ['browserSync', 'watch']);
   grunt.registerTask('build', ['jekyll:dev', 'compass:dev']);
 
   grunt.loadNpmTasks('grunt-contrib-watch');
   grunt.loadNpmTasks('grunt-contrib-compass');
   grunt.loadNpmTasks('grunt-jekyll');
+  grunt.loadNpmTasks('grunt-browser-sync');
 };

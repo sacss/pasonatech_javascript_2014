@@ -9,13 +9,11 @@ tags: demo
 <script type="text/javascript">
 jQuery(function($) {
 
-	var $demo = $('#demo')
+	var $demo = $('#demo'),
 		$idSelect = $('#select'),
 		$idDel = $('#del');
-		classSupport = $('.support:gt(2)');
 	$idSelect.val('');
 	$idDel.fadeOut(0);
-	classSupport.hide();
 	$demo.on('keyup', '#select', function(){
 		var thisLength = $(this).val().length;
 		if(thisLength > 0){
@@ -33,13 +31,14 @@ jQuery(function($) {
 		var inputScript = $idSelect.val();
 		if(inputScript){
 			eval(inputScript); //よいこのみんなは真似しないように
+			// 非推奨理由 => 参照：https://developer.mozilla.org/ja/docs/Web/JavaScript/Reference/Global_Objects/eval
 			return false;
 		}else{
 			alert('空っぽ');
 		}
 	});
 	$demo.on('click', '#clear', function(){
-		$demo.find('*').not('#del, #select, .support').removeAttr('style');
+		$demo.find('[style]').not('#del, #select, .support').removeAttr('style');
 	});
 	$demo.on('click', '#clearClass', function(){
 		$('.pink').removeClass('pink');
@@ -48,15 +47,15 @@ jQuery(function($) {
 	});
 	var check1 = /\$/,
 			check2 = /\;/;
-	$('.support:eq(0)').click(function(){
+	$('.support:eq(0)').on('click', function(){
 		var inputScript = $idSelect.val();
 		if(!check1.test(inputScript)){
 			var support = "$('')" + inputScript;
 			$idSelect.val(support);
-			idDel.fadeTo('fast',1);
+			$idDel.fadeTo('fast',1);
 		};
 	});
-	$('.support:eq(1)').click(function(){
+	$('.support:eq(1)').on('click', function(){
 		var inputScript = $idSelect.val();
 		if(!check2.test(inputScript)){
 			var support = inputScript + ".css({});";
@@ -64,7 +63,7 @@ jQuery(function($) {
 			$idDel.fadeIn('fast');
 		};
 	});
-	$('.support:eq(2)').click(function(){
+	$('.support:eq(2)').on('click', function(){
 		var inputScript = $idSelect.val();
 		if(!check2.test(inputScript)){
 			var support = inputScript + ".addClass('');";

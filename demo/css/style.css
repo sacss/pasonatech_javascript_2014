@@ -127,7 +127,7 @@ table { border-collapse: collapse; border-spacing: 0; }
 ===================================================*/
 /*------------------------------------------------- body,link
 ---------------------------------------------------*/
-body { color: #34495e; background-color: white; font-family: Verdana,Arial,"ヒラギノ角ゴPro W3","Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,"ＭＳ Ｐゴシック",sans-serif; line-height: 1.5; }
+body { color: #34495e; background-color: #ffffff; font-family: Verdana,Arial,"ヒラギノ角ゴPro W3","Hiragino Kaku Gothic Pro", "メイリオ", Meiryo,"ＭＳ Ｐゴシック",sans-serif; line-height: 1.5; }
 
 a { color: #3498db; text-decoration: none; }
 a:visited { color: #3498db; text-decoration: none; }
@@ -147,33 +147,33 @@ pre { font-size: 150%; }
 
 ===================================================*/
 #contents { margin: 0 auto; padding: 0 20px; }
-#contents h2 { font-size: 300%; padding: 20px; margin: 0 -20px; background-color: #ecf0f1; color: #7f8c8d; }
-#contents h3 { padding: 10px 20px; font-size: 260%; background-color: #34495e; color: white; }
+#contents h2 { font-size: 300%; padding: 20px; margin: 0 -20px; background-color: #ecf0f1; color: #34495e; }
+#contents h3 { padding: 10px 20px; font-size: 260%; background-color: #34495e; color: #ffffff; }
 #contents h4 { font-size: 200%; padding: 0 5px 10px; margin-bottom: 10px; border-bottom: solid #bdc3c7 2px; }
 #contents .section { margin-bottom: 100px; }
-#contents .section .sectionHeader h2 { background-color: #34495e; color: white; }
+#contents .section .sectionHeader h2 { background-color: #34495e; color: #ffffff; }
 #contents .section .sectionContents { position: relative; }
 #contents .section .sectionContents p { font-size: 160%; }
 #contents .section .sectionContents p img { width: auto; height: auto; max-width: 100%; max-height: 100%; border: solid #bdc3c7 2px; }
 #contents .section .sectionContents p.pre { font-size: 200%; }
-#contents .section .sectionContents p.pre a { color: white; }
+#contents .section .sectionContents p.pre a { color: #ffffff; }
 #contents .section .sectionContents p.pre a:hover { color: #e74c3c; text-decoration: none; }
-#contents .section .sectionContents .posRB { position: absolute; bottom: 30px; right: 30px; color: white; font-size: 300%; }
+#contents .section .sectionContents .posRB { position: absolute; bottom: 30px; right: 30px; color: #ffffff; font-size: 300%; }
 #contents .section .sectionContents .img-animation { -webkit-transition: 2s; }
 #contents .section .sectionContents .img-animation:hover { -webkit-transform: rotate(180deg); }
 #contents .section .sectionContents .prehidden { display: none; }
 #contents .section .sectionContents ul li { list-style-type: disc; font-size: 150%; }
 #contents .section .sectionContents ul.list01 { padding: 0 20px; margin: 0 -20px 30px; text-align: left; border: solid #bdc3c7; border-width: 1px 1px 0 1px; }
 #contents .section .sectionContents ul.list01 li { list-style-type: none; }
-#contents .section .sectionContents ul.list01 li a { display: block; white-space: nowrap; overflow: hidden; text-decoration: none; color: #7f8c8d; padding: 5px 30px; margin: 0 -30px; border-bottom: 1px solid #bdc3c7; }
-#contents .section .sectionContents ul.list01 li a:hover { text-decoration: none; background: #bdc3c7; color: white; }
+#contents .section .sectionContents ul.list01 li a { display: block; white-space: nowrap; overflow: hidden; text-decoration: none; color: #34495e; padding: 5px 30px; margin: 0 -30px; border-bottom: 1px solid #bdc3c7; }
+#contents .section .sectionContents ul.list01 li a:hover { text-decoration: none; background: #bdc3c7; color: #ffffff; }
 #contents .section .sectionContents ul.list01 li:nth-child(even) a { background-color: #ecf0f1; }
 #contents .section .sectionContents ul.list01 li:nth-child(even) a:hover { background: #bdc3c7; }
 
 /* -------------------------------------------------- header --------------------------------------------------*/
 #header { background-color: #3498db; }
 #header h1 { margin: 0; }
-#header a { padding: 10px 20px; display: block; font-size: 24px; color: white; text-decoration: none; font-weight: bold; }
+#header a { padding: 10px 20px; display: block; font-size: 24px; color: #ffffff; text-decoration: none; font-weight: bold; }
 
 /* -------------------------------------------------- footer --------------------------------------------------*/
 /* -------------------------------------------------- globalNav --------------------------------------------------*/
@@ -392,9 +392,9 @@ pre { font-size: 150%; }
 #demo .blue { background-color: #0000ff; color: #ffffff !important; }
 #demo .pink { background-color: #ff1493; color: #ffffff !important; }
 #demo input, #demo textarea { font-size: 300%; padding: 5px; }
-#demo button { margin: 5px 10px 0 0; font-size: 154%; height: 50px; line-height: 45px; vertical-align: middle; border: none; background-color: #95a5a6; color: white; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+#demo button { margin: 5px 10px 0 0; font-size: 154%; height: 50px; line-height: 45px; vertical-align: middle; border: none; background-color: #95a5a6; color: #ffffff; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
 #demo button:hover { background-color: #7f8c8d; }
-#demo #submit { background-color: #e74c3c; color: white; }
+#demo #submit { background-color: #e74c3c; color: #ffffff; }
 
 #select { width: 100%; height: 1.2em; }
 
@@ -412,7 +412,7 @@ pre { font-size: 150%; }
 
 #selectP { position: relative; }
 
-#del { position: absolute; width: 50px; top: 0; right: -15px; font-size: 225%; -webkit-border-radius: 5px; -moz-border-radius: 5px; border-radius: 5px; }
+#del { position: absolute; width: 50px; top: 0; right: -15px; font-size: 225%; -moz-border-radius: 5px; -webkit-border-radius: 5px; border-radius: 5px; }
 
 #toTop a { display: block; position: fixed; padding: 10px; bottom: 0; right: 0; background: #202020; color: #fff; -moz-border-radius-topleft: 10px; -webkit-border-top-left-radius: 10px; opacity: 0.6; text-decoration: none; }
 #toTop a:hover { opacity: 1; }

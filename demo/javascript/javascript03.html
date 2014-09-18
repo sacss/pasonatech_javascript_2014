@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JavaScript基礎：変数の補足 |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+			<h2>JavaScript基礎：変数の補足</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>変数</h3>
+				</header>
+				<div class="sectionContents">
+					<p>値を入れておくための入れ物、var を最初につけることで、その後に書かれるキーワードが変数になるという宣言になります。</p>
+
+					<pre><code class="language-javascript">var a = 'あいうえお';
+alert(a); // あいうえお のアラート</code></pre>
+
+					<p>文字列、シングルクォーテーションもしくはダブルクォーテーションで囲まれている</p>
+
+					<p>変数にしていないものを利用しようとすると、エラーになります。</p>
+
+					<pre><code class="language-javascript">alert(aaa); // Uncaught ReferenceError: aaa is not defined</code></pre>
+
+					<p>varをつけて変数であるという宣言をしておくことで、中身が表示されるようになります。何も代入してなければ 未定義の undefinded になります。</p>
+
+					<pre><code class="language-javascript">var b;
+alert(b); // undefined</code></pre>
+
+					<p>functionの中などで宣言された変数はその中でのみ有効になります。</p>
+
+					<pre><code class="language-javascript">var test;
+(function () { // 即時関数
+  var test = 'テスト'; // function内のみで有効
+  alert(test); // テスト
+})();
+alert(test); // undefined
+</code></pre>
+
+					<h4>注意</h4>
+					<p>var の変数宣言なしで利用すると、グローバル変数になり、上書きされる危険がでてきます。</p>
+
+					<pre><code class="language-javascript">var test = 'テストです';
+alert(test); // テストです
+(function () {
+  // var なしで宣言で上書きされます
+  test = '上書きされます';
+  alert(test); // 上書きされます
+})();
+alert(test); // 上書きされます
+</code></pre>
+
+					<p>必ず変数宣言をして使いましょう。</p>
+				</div>
+			</section>
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>
