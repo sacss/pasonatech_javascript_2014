@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>jQueryの基礎で抑えておくメソッドやイベント |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+			<h2>jQueryの基礎で抑えておくメソッドやイベント</h2>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>jQueryのみのセレクタ（フィルダ）</h3>
+				</header>
+				<div class="sectionContents">
+					<p>:first：取得した要素全体の１つ目。（:first-childとは違う）</p>
+					<pre><code class="language-javascript">$('td:first').addClass('red');</code></pre>
+					<p>:last：取得した要素全体の最後。</p>
+					<pre><code class="language-javascript">$('td:last').addClass('red');</code></pre>
+					<p>:eq(数値)：指定した順番目にくる要素（0がスタート）</p>
+					<pre><code class="language-javascript">$('td:eq(1)').addClass('red');</code></pre>
+					<p>:lt(数値)：指定した順番より前の要素（0がスタート）</p>
+					<pre><code class="language-javascript">$('td:lt(3)').addClass('red');</code></pre>
+					<p>:gt(数値)：指定した順番より後ろの要素（0がスタート）</p>
+					<pre><code class="language-javascript">$('td:gt(3)').addClass('red');</code></pre>
+					<p>:even：取得した要素の偶数要素（0がスタート、見た目は奇数）</p>
+					<pre><code class="language-javascript">$('td:even').addClass('red');</code></pre>
+					<p>:odd：取得した要素の奇数要素（0がスタート、見た目は偶数）</p>
+					<pre><code class="language-javascript">$('td:odd').addClass('red');</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>似たようで違う</h3>
+				</header>
+				<div class="sectionContents">
+					<p>:first, :eq(0), :nth-child(1)</p>
+					<pre><code class="language-javascript">$('td:first').addClass('red');</code></pre>
+					<pre><code class="language-javascript">$('td:eq(0)').addClass('red');</code></pre>
+					<pre><code class="language-javascript">$('td:nth-child(1)').addClass('red');</code></pre>
+					<p>:even, :nth-child(odd), :nth-child(2n-1)</p>
+					<pre><code class="language-javascript">$('td:even').addClass('red');</code></pre>
+					<pre><code class="language-javascript">$('td:nth-child(odd)').addClass('red');</code></pre>
+					<pre><code class="language-javascript">$('td:nth-child(2n-1)').addClass('red');</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>要素を選択するメソッド</h3>
+				</header>
+				<div class="sectionContents">
+					<p>.find()：子孫要素から探す</p>
+					<pre><code class="language-javascript">$('#table01').find('.first-child').addClass('red');</code></pre>
+					<p>.filter()：要素を絞り込む</p>
+					<pre><code class="language-javascript">$('td').filter(':nth-child(2n)').addClass('red');</code></pre>
+					<p>.next()：次の要素</p>
+					<pre><code class="language-javascript">$('td:first').next().addClass('red');</code></pre>
+					<p>.next()：前の要素</p>
+					<pre><code class="language-javascript">$('td:eq(3)').prev().addClass('red');</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>イベント</h3>
+				</header>
+				<div class="sectionContents">
+					<p>click, mouseenter, mouseleave, hover, mouseover, mouseout, on, off, ready, load, resize・・・etc </p>
+					<p><a href="http://api.jquery.com/category/events/">Events | jQuery API Documentation</a></p>		
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>エフェクト関連</h3>
+				</header>
+				<div class="sectionContents">
+					<p>hide, show, toggle, slideUp, slideDown, slideToggle, fadeOut, fadeIn, fadeToggle, animate, stop</p>
+				</div>
+			</section>
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>

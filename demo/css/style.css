@@ -147,7 +147,7 @@ pre { font-size: 150%; }
 
 ===================================================*/
 #contents { margin: 0 auto; padding: 0 20px; }
-#contents h2 { font-size: 300%; padding: 20px; margin: 0 -20px; background-color: #ecf0f1; color: #7f8c8d; }
+#contents h2 { font-size: 300%; padding: 20px; margin: 0 -20px; background-color: #ecf0f1; color: #34495e; }
 #contents h3 { padding: 10px 20px; font-size: 260%; background-color: #34495e; color: #ffffff; }
 #contents h4 { font-size: 200%; padding: 0 5px 10px; margin-bottom: 10px; border-bottom: solid #bdc3c7 2px; }
 #contents .section { margin-bottom: 100px; }
@@ -165,7 +165,7 @@ pre { font-size: 150%; }
 #contents .section .sectionContents ul li { list-style-type: disc; font-size: 150%; }
 #contents .section .sectionContents ul.list01 { padding: 0 20px; margin: 0 -20px 30px; text-align: left; border: solid #bdc3c7; border-width: 1px 1px 0 1px; }
 #contents .section .sectionContents ul.list01 li { list-style-type: none; }
-#contents .section .sectionContents ul.list01 li a { display: block; white-space: nowrap; overflow: hidden; text-decoration: none; color: #7f8c8d; padding: 5px 30px; margin: 0 -30px; border-bottom: 1px solid #bdc3c7; }
+#contents .section .sectionContents ul.list01 li a { display: block; white-space: nowrap; overflow: hidden; text-decoration: none; color: #34495e; padding: 5px 30px; margin: 0 -30px; border-bottom: 1px solid #bdc3c7; }
 #contents .section .sectionContents ul.list01 li a:hover { text-decoration: none; background: #bdc3c7; color: #ffffff; }
 #contents .section .sectionContents ul.list01 li:nth-child(even) a { background-color: #ecf0f1; }
 #contents .section .sectionContents ul.list01 li:nth-child(even) a:hover { background: #bdc3c7; }

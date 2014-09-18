@@ -6,19 +6,10 @@ module.exports = function(grunt) {
 
     // jekyll (for HTML)
     jekyll: {
-      server : {
-        options: {
-          src : '_source',
-          dest: './demo',
-          server : true,
-          server_port : 4000,
-          auto : true
-        }
-      },
       dev: {
         options: {
           src: '_source',
-          dest: './demo'
+          dest: 'demo'
         }
       }
     },

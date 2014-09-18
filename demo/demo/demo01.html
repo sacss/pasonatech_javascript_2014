@@ -31,11 +31,9 @@ jQuery(function($) {
 
 	var $demo = $('#demo'),
 		$idSelect = $('#select'),
-		$idDel = $('#del'),
-		classSupport = $('.support:gt(2)');
+		$idDel = $('#del');
 	$idSelect.val('');
 	$idDel.fadeOut(0);
-	classSupport.hide();
 	$demo.on('keyup', '#select', function(){
 		var thisLength = $(this).val().length;
 		if(thisLength > 0){
