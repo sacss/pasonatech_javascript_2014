@@ -28,7 +28,8 @@ tags: tab
 
 <script type="text/javascript">
 jQuery(function($){
-	$('.tab__button a').on('click', function () {
+	$('.tab__button a').on('click', function (e) {
+		e.preventDefault();
 		$('.tab__button').removeClass('is-active');
 		$(this).parent().addClass('is-active');
 		$('.tab__content').removeClass('is-active');
@@ -78,7 +79,8 @@ jQuery(function($){
 
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
-	$('.tab__button a').on('click', function () {
+	$('.tab__button a').on('click', function (e) {
+		e.preventDefault();
 		$('.tab__button').removeClass('is-active');
 		$(this).parent().addClass('is-active');
 		$('.tab__content').removeClass('is-active');

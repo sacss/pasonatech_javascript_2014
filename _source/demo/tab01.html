@@ -30,6 +30,7 @@ jQuery(function($){
 	$('.tab__content:first').show();
 	$('.tab__button a').on('click', function () {
 		$('.tab__content').hide();
+		alert($(this).attr('href'));
 		$($(this).attr('href')).show();
 	});
 });
@@ -123,7 +124,7 @@ jQuery(function($){
 	<ul class="tab__list">
 		<li class="tab__button"><a href="#tab1">タブ１</a></li>
 		<li class="tab__button"><a href="#tab2">タブ２</a></li>
-		<li class="tab__button"><a href="#tab3">タブ２</a></li>
+		<li class="tab__button"><a href="#tab3">タブ３</a></li>
 	</ul>
 	<div id="tab1" class="tab__content red">タブ１</div>
 	<div id="tab2" class="tab__content blue">タブ２</div>

@@ -30,11 +30,17 @@ tags: tab
 
 <script type="text/javascript">
 jQuery(function($){
-	$('.tab__button a').on('click', function () {
-		$('.tab__button').removeClass('is-active');
-		$(this).parent().addClass('is-active');
-		$('.tab__content').removeClass('is-active');
-		$($(this).attr('href')).addClass('is-active');
+	var $tab__button = $('.tab__button');
+	$tab__button.find('a').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $thisParent = $this.parent();
+		if (!$thisParent.hasClass('is-active')) {
+			$tab__button.removeClass('is-active');
+			$thisParent.addClass('is-active');
+			$('.tab__content').removeClass('is-active');
+			$($this.attr('href')).addClass('is-active');
+		}
 	});
 });
 </script>
@@ -80,11 +86,17 @@ jQuery(function($){
 
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
-	$('.tab__button a').on('click', function () {
-		$('.tab__button').removeClass('is-active');
-		$(this).parent().addClass('is-active');
-		$('.tab__content').removeClass('is-active');
-		$($(this).attr('href')).addClass('is-active');
+	var $tab__button = $('.tab__button');
+	$tab__button.find('a').on('click', function (e) {
+		e.preventDefault();
+		var $this = $(this);
+		var $thisParent = $this.parent();
+		if (!$thisParent.hasClass('is-active')) {
+			$tab__button.removeClass('is-active');
+			$thisParent.addClass('is-active');
+			$('.tab__content').removeClass('is-active');
+			$($this.attr('href')).addClass('is-active');
+		}
 	});
 });</code></pre>
 

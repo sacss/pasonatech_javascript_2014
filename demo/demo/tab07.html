@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>タブ機能 ステップ４ |  JavaScript&amp; jQuery Study</title>
+  <title>タブ機能 ステップ６ その２ |  JavaScript&amp; jQuery Study</title>
   <link rel="stylesheet" href="../css/style.css">
       
     <script src="../js/lib/jquery-2.0.3.min.js"></script>
@@ -25,35 +25,43 @@
 
   <div id="contents">
     <div id="main">
-<h2>タブ機能 ステップ４（実演）</h2>
+<h2>タブ機能 ステップ６ その２（実演）</h2>
 
 <section class="section">
 	<header class="sectionHeader">
-		<h3>徐々に理想の仕様に近づける　その３</h3>
+		<h3>一歩先へ：エフェクト付きで切り替える</h3>
 	</header>
 	<div class="sectionContents">
 		<ul>
+			<li>何度も出てくるセレクタは変数に置き換える</li>
 			<li>初期状態：CSSでコンテンツは最初を除いて非表示（classで制御）</li>
 			<li>コンテンツの最初を開く</li>
 			<li>タブをクリックする</li>
-			<li><span class="green">既にアクティブなら処理をしないで終了</span></li>
+			<li>既にアクティブなら処理をしないで終了</li>
 			<li>タブのアクティブを一度除去</li>
 			<li>クリックしたタブにclassをつけてアクティブに、aタグが動かないようにする</li>
-			<li>コンテンツを一度全部非表示（classで制御）</li>
-			<li>aタグに仕込んでいたハッシュを持つIDの（連動する）コンテンツが開く（classで制御）</li>
+			<li>コンテンツを一度全部非表示<div class="green">（フェードのエフェクト付き）</div></li>
+			<li>aタグに仕込んでいたハッシュを持つIDの（連動する）コンテンツが開く<div class="green">（フェードのエフェクト付き）</div></li>
 		</ul>
 	</div>
 </section>
 
 <script type="text/javascript">
 jQuery(function($){
-	$('.tab__button a').on('click', function (e) {
+	var $tab__button = $('.tab__button');
+	$tab__button.find('a').on('click', function (e) {
 		e.preventDefault();
-		if (!$(this).parent().hasClass('is-active')) {
-			$('.tab__button').removeClass('is-active');
-			$(this).parent().addClass('is-active');
-			$('.tab__content').removeClass('is-active');
-			$($(this).attr('href')).addClass('is-active');
+		var $this = $(this);
+		var $thisParent = $this.parent();
+		if (!$thisParent.hasClass('is-active')) {
+			$tab__button.removeClass('is-active');
+			$thisParent.addClass('is-active');
+			$('.tab__content.is-active').stop().slideUp('slow', function(){
+				$(this).removeClass('is-active');
+			});
+			$($this.attr('href')).stop().slideDown('slow', function(){
+				$(this).addClass('is-active');
+			});
 		}
 	});
 });
@@ -61,6 +69,7 @@ jQuery(function($){
 
 <style>
 #tab {
+	position: relative;
 	font-size: 24px;
 	margin: 5px 10px;
 }
@@ -83,6 +92,9 @@ jQuery(function($){
 	background-color: #34495e;
 }
 .tab__content {
+	position: absolute;
+	top: 62px;
+	left: 0;
 	display: none;
 	width: 100%;
 	height: 300px;
@@ -100,13 +112,20 @@ jQuery(function($){
 
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
-	$('.tab__button a').on('click', function (e) {
+	var $tab__button = $('.tab__button');
+	$tab__button.find('a').on('click', function (e) {
 		e.preventDefault();
-		if (!$(this).parent().hasClass('is-active')) {
-			$('.tab__button').removeClass('is-active');
-			$(this).parent().addClass('is-active');
-			$('.tab__content').removeClass('is-active');
-			$($(this).attr('href')).addClass('is-active');
+		var $this = $(this);
+		var $thisParent = $this.parent();
+		if (!$thisParent.hasClass('is-active')) {
+			$tab__button.removeClass('is-active');
+			$thisParent.addClass('is-active');
+			$('.tab__content.is-active').stop().slideUp('slow', function(){
+				$(this).removeClass('is-active');
+			});
+			$($this.attr('href')).stop().slideDown('slow', function(){
+				$(this).addClass('is-active');
+			});
 		}
 	});
 });</code></pre>
