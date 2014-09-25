@@ -1,0 +1,104 @@
+---
+layout: default
+title: タブ機能 ステップ６
+jqv: false
+script_head: true
+categories: tab
+tags: tab
+---
+
+<h2>タブ機能 ステップ６（実演）</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>一歩先へ：エフェクト付きで切り替える</h3>
+	</header>
+	<div class="sectionContents">
+		<ul>
+			<li>何度も出てくるセレクタは変数に置き換える</li>
+			<li>初期状態：CSSでコンテンツは最初を除いて非表示（classで制御）</li>
+			<li>コンテンツの最初を開く</li>
+			<li>タブをクリックする</li>
+			<li>既にアクティブなら処理をしないで終了</li>
+			<li>タブのアクティブを一度除去</li>
+			<li>クリックしたタブにclassをつけてアクティブに、aタグが動かないようにする</li>
+			<li>コンテンツを一度全部非表示<div class="green">（フェードのエフェクト付き）</div></li>
+			<li>aタグに仕込んでいたハッシュを持つIDの（連動する）コンテンツが開く<div class="green">（フェードのエフェクト付き）</div></li>
+		</ul>
+	</div>
+</section>
+
+<script type="text/javascript">
+jQuery(function($){
+	$('.tab__button a').on('click', function () {
+		$('.tab__button').removeClass('is-active');
+		$(this).parent().addClass('is-active');
+		$('.tab__content').removeClass('is-active');
+		$($(this).attr('href')).addClass('is-active');
+	});
+});
+</script>
+
+<style>
+#tab {
+	font-size: 24px;
+	margin: 5px 10px;
+}
+.tab__list {
+	padding: 0;
+	overflow: hidden;
+}
+.tab__button {
+	float: left;
+}
+.tab__button a {
+	display: block;
+	padding: 10px 20px;
+	border: solid #34495e;
+	border-size: 5px 5px 0 5px;
+	text-decoration: none;
+}
+.tab__button a:hover {
+	color: #fff;
+	background-color: #34495e;
+}
+.tab__content {
+	display: none;
+	width: 100%;
+	height: 300px;
+	color: #222222;
+	border: 10px solid #34495e;
+}
+.tab__button.is-active a{
+	color: #fff;
+	background-color: #34495e;
+}
+.tab__content.is-active {
+	display: block;
+}
+</style>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('.tab__button a').on('click', function () {
+		$('.tab__button').removeClass('is-active');
+		$(this).parent().addClass('is-active');
+		$('.tab__content').removeClass('is-active');
+		$($(this).attr('href')).addClass('is-active');
+	});
+});</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+<div id="tab">
+	<ul class="tab__list">
+		<li class="tab__button is-active"><a href="#tab1">タブ１</a></li>
+		<li class="tab__button"><a href="#tab2">タブ２</a></li>
+		<li class="tab__button"><a href="#tab3">タブ２</a></li>
+	</ul>
+	<div id="tab1" class="tab__content red is-active">タブ１</div>
+	<div id="tab2" class="tab__content blue">タブ２</div>
+	<div id="tab3" class="tab__content pink">タブ３</div>
+</div>
+</div>
+

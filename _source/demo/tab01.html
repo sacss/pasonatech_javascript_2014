@@ -16,7 +16,10 @@ tags: tab
 	<div class="sectionContents">
 		<p>まずはシンプルなところから</p>
 		<ul>
+			<li>初期状態：CSSでコンテンツは非表示</li>
+			<li>コンテンツの最初を開く</li>
 			<li>タブをクリックする</li>
+			<li>コンテンツを一度全部非表示</li>
 			<li>aタグに仕込んでいたハッシュを持つIDの（連動する）コンテンツが開く</li>
 		</ul>
 	</div>
@@ -47,7 +50,8 @@ jQuery(function($){
 .tab__button a {
 	display: block;
 	padding: 10px 20px;
-	border: 5px solid #34495e;
+	border: solid #34495e;
+	border-size: 5px 5px 0 5px;
 }
 .tab__button a:hover {
 	color: #fff;
@@ -84,11 +88,12 @@ jQuery(function($){
 &lt;/div&gt;</code></pre>
 
 <h3>CSS</h3>
-<pre><code class="language-markup">#tab {
+<pre><code class="language-css">#tab {
 	font-size: 24px;
 	margin: 5px 10px;
 }
 .tab__list {
+	padding: 0;
 	overflow: hidden;
 }
 .tab__button {
@@ -97,7 +102,8 @@ jQuery(function($){
 .tab__button a {
 	display: block;
 	padding: 10px 20px;
-	border: 2px solid #34495e;
+	border: solid #34495e;
+	border-size: 5px 5px 0 5px;
 }
 .tab__button a:hover {
 	color: #fff;
@@ -119,9 +125,9 @@ jQuery(function($){
 		<li class="tab__button"><a href="#tab2">タブ２</a></li>
 		<li class="tab__button"><a href="#tab3">タブ２</a></li>
 	</ul>
-	<div id="tab1" class="tab__content">タブ１</div>
-	<div id="tab2" class="tab__content">タブ２</div>
-	<div id="tab3" class="tab__content">タブ３</div>
+	<div id="tab1" class="tab__content red">タブ１</div>
+	<div id="tab2" class="tab__content blue">タブ２</div>
+	<div id="tab3" class="tab__content pink">タブ３</div>
 </div>
 </div>
 
