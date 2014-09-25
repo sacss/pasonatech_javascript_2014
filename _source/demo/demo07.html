@@ -18,6 +18,21 @@ jQuery(function($){
 });
 </script>
 
+<style>
+#demo div {
+	font-size: 24px;
+	padding: 5px 10px;
+}
+#demo :nth-child(odd) {
+	color: #222222;
+	background-color: #2ecc71;
+	border-bottom: 1px solid #34495e;
+}
+#demo :nth-child(even) {
+	background-color: #ecf0f1;
+}
+</style>
+
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
 	$('#demo > div:odd').hide();
@@ -43,7 +58,7 @@ jQuery(function($){
 &lt;/div&gt;</code></pre>
 
 <h3>Demo</h3>
-<div id="demo">
+<div id="demo" class="mb100">
 <div>表示１</div>
 <div>出てくる１</div>
 <div>表示２</div>
@@ -54,3 +69,4 @@ jQuery(function($){
 <div>出てくる４</div>
 <div>表示５</div>
 <div>出てくる５</div>
+</div>

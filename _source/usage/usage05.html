@@ -60,6 +60,22 @@ tags: oneself
 					<pre><code class="language-javascript">$('td:first').next().addClass('red');</code></pre>
 					<p>.next()：前の要素</p>
 					<pre><code class="language-javascript">$('td:eq(3)').prev().addClass('red');</code></pre>
+					<p>.parent()：親要素（指定した要素の直上）</p>
+					<pre><code class="language-javascript">$('td:eq(3)').parent().addClass('red');</code></pre>
+					<p>.parents()：親要素（指定した要素を囲っている親もその親も、htmlタグまでさかのぼります）</p>
+					<pre><code class="language-javascript">$('td:eq(3)').parents().addClass('red');</code></pre>
+				</div>
+			</section>
+
+			<section class="section">
+				<header class="sectionHeader">
+					<h3>似たようで違う その２</h3>
+				</header>
+				<div class="sectionContents">
+					<p>子孫セレクタとfind.find()</p>
+					<pre><code class="language-javascript">$('table').find('td:even').addClass('red');</code></pre>
+					<pre><code class="language-javascript">$('table td:even').addClass('red');</code></pre>
+					<p>複数のtableがあると、evenになる場所が変わります。前者はtableごとのtd:even、後者は全部拾えたtdの:even。</p>
 				</div>
 			</section>
 
@@ -69,7 +85,9 @@ tags: oneself
 				</header>
 				<div class="sectionContents">
 					<p>click, mouseenter, mouseleave, hover, mouseover, mouseout, on, off, ready, load, resize・・・etc </p>
-					<p><a href="http://api.jquery.com/category/events/">Events | jQuery API Documentation</a></p>		
+					<p><a href="http://api.jquery.com/category/events/">Events | jQuery API Documentation</a></p>
+					<h4>補足</h4>
+					<p>hover は mouseenter と mouseleave の組み合わせ。指定したセレクタの子孫要素にカーソルが移動してもイベント発火が起きないが、mouseover と mouseout は、子孫要素にカーソルが移動してもイベントが発火してしまいます。</p>
 				</div>
 			</section>
 
