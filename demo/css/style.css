@@ -152,6 +152,7 @@ pre { font-size: 150%; }
 #contents h4 { font-size: 200%; padding: 0 5px 10px; margin-bottom: 10px; border-bottom: solid #bdc3c7 2px; }
 #contents .section { margin-bottom: 100px; }
 #contents .section .sectionHeader h2 { background-color: #34495e; color: #ffffff; }
+#contents .section .sectionHeader h3 { margin: 0 -20px; }
 #contents .section .sectionContents { position: relative; }
 #contents .section .sectionContents p { font-size: 160%; }
 #contents .section .sectionContents p img { width: auto; height: auto; max-width: 100%; max-height: 100%; border: solid #bdc3c7 2px; }
@@ -371,6 +372,8 @@ pre { font-size: 150%; }
 .m0 { margin: 0 !important; }
 
 .p0 { padding: 0 !important; }
+
+.mb100 { margin-bottom: 100px !important; }
 
 /*------------------------------------------------- color
 ---------------------------------------------------*/

@@ -34,6 +34,21 @@ jQuery(function($){
 });
 </script>
 
+<style>
+#demo div {
+  font-size: 24px;
+  padding: 5px 10px;
+}
+.panel {
+  color: #222222;
+  background-color: #2ecc71;
+  border-bottom: 1px solid #34495e;
+}
+.none {
+  background-color: #ecf0f1;
+}
+</style>
+
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
 	$('.none').hide();
@@ -57,7 +72,7 @@ jQuery(function($){
 &lt;/div&gt;</code></pre>
 
 <h3>Demo</h3>
-<div id="demo">
+<div id="demo" class="mb100">
 <div class="panel">表示１</div>
 <div class="none">出てくる１</div>
 <div class="panel">表示２</div>
@@ -68,6 +83,7 @@ jQuery(function($){
 <div class="none">出てくる４</div>
 <div class="panel">表示５</div>
 <div class="none">出てくる５</div>
+</div>
 
     </div>
   </div>
