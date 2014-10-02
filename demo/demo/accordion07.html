@@ -1,0 +1,223 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>アコーディオン機能 ステップ７ |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+<h2>アコーディオン機能 ステップ７（実演）</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>仕様を変える：横開閉にする</h3>
+	</header>
+	<div class="sectionContents">
+		<ul class="pt30">
+			<li><span class="green">初期状態：横型スタイルを作る</span></li>
+			<li>初期状態：CSSでコンテンツは非表示</li>
+			<li>見出しをクリック</li>
+			<li>見出しに開いていることがわかるようにアクティブスタイル追加</li>
+			<li>開いているところを閉じる</li>
+			<li>見出しの次の要素が縦エフェクトで開く（何度も開かないようにする）</li>
+		</ul>
+	</div>
+</section>
+
+<script type="text/javascript">
+jQuery(function($){
+	$('#accordion dt').on('click', function () {
+		if(!$(this).hasClass('is-active')) {
+			$('.is-active').removeClass('is-active')
+				.next().stop().animate({
+					width: 'hide'
+				}, 'slow');
+			$(this).addClass('is-active').next().animate({
+				width: 'show'
+			}, 'slow');
+		}
+	});
+});
+</script>
+
+<style>
+#accordion {
+	font-size: 24px;
+	margin: 5px 10px;
+}
+#accordion dl {
+	border: solid #34495e;
+	border-width: 0;
+}
+#accordion dl:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+#accordion dt {
+	float: left;
+	width: 1em;
+	border: solid #34495e;
+	border-width: 1px;
+	cursor: pointer;
+	padding: 5px 10px;
+	height: 200px;
+}
+#accordion dt:last-of-type {
+	border-width: 1px;
+}
+#accordion dt.is-active,
+#accordion dt:hover {
+	color: #fff;
+	background-color: #34495e;
+}
+#accordion dd {
+	float: left;
+	display: none;
+	width: 600px;
+	border: solid #34495e;
+	border-width: 1px 0 1px 1px;
+	margin: 0;
+	padding: 0;
+	height: 210px;
+	overflow: hidden;
+}
+#accordion dd div {
+	padding: 10px;
+}
+#accordion dd:first-of-type {
+	display: block;
+}
+#accordion dd:last-of-type {
+	border-width: 1px;
+}
+</style>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('#accordion dt').on('click', function () {
+		if(!$(this).hasClass('is-active')) {
+			$('.is-active').removeClass('is-active')
+				.next().stop().animate({
+					width: 'hide'
+				}, 'slow');
+			$(this).addClass('is-active').next().animate({
+				width: 'show'
+			}, 'slow');
+		}
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;div id="accordion"&gt;
+  &lt;dl&gt;
+    &lt;dt class="is-active"&gt;見出し１&lt;/dt&gt;
+    &lt;dd&gt;コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ&lt;/dd&gt;
+    &lt;dt&gt;見出し２&lt;/dt&gt;
+    &lt;dd&gt;コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ&lt;/dd&gt;
+    &lt;dt&gt;見出し３&lt;/dt&gt;
+    &lt;dd&gt;コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ&lt;/dd&gt;
+    &lt;dt&gt;見出し３&lt;/dt&gt;
+    &lt;dd&gt;コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ&lt;/dd&gt;
+    &lt;dt&gt;見出し３&lt;/dt&gt;
+    &lt;dd&gt;コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ&lt;/dd&gt;
+  &lt;/dl&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>CSS</h3>
+<pre><code class="language-css">#accordion {
+	font-size: 24px;
+	margin: 5px 10px;
+}
+#accordion dl {
+	border: solid #34495e;
+	border-width: 0;
+}
+#accordion dl:after {
+	content: '';
+	display: block;
+	clear: both;
+}
+#accordion dt {
+	float: left;
+	width: 1em;
+	border: solid #34495e;
+	border-width: 1px;
+	cursor: pointer;
+	padding: 5px 10px;
+	height: 200px;
+}
+#accordion dt:last-of-type {
+	border-width: 1px;
+}
+#accordion dt.is-active,
+#accordion dt:hover {
+	color: #fff;
+	background-color: #34495e;
+}
+#accordion dd {
+	float: left;
+	display: none;
+	width: 600px;
+	border: solid #34495e;
+	border-width: 1px 0 1px 1px;
+	margin: 0;
+	padding: 0;
+	height: 210px;
+	overflow: hidden;
+}
+#accordion dd div {
+	padding: 10px;
+}
+#accordion dd:first-of-type {
+	display: block;
+}
+#accordion dd:last-of-type {
+	border-width: 1px;
+}</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+<div id="accordion">
+	<dl>
+		<dt class="is-active">見出し１</dt>
+		<dd><div>コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ</div></dd>
+		<dt>見出し２</dt>
+		<dd><div>コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ</div></dd>
+		<dt>見出し３</dt>
+		<dd><div>コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ</div></dd>
+		<dt>見出し４</dt>
+		<dd><div>コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ</div></dd>
+		<dt>見出し５</dt>
+		<dd><div>コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ</div></dd>
+	</dl>
+</div>
+</div>
+
+
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>
