@@ -27,7 +27,10 @@ tags: accordion
 <script type="text/javascript">
 jQuery(function($){
 	$('#accordion dt').on('click', function () {
-		$(this).next().slideToggle();
+		if (!$(this).hasClass('is-active')) {
+			$('.is-active').removeClass('is-active').next().stop().slideUp();
+			$(this).addClass('is-active').next().stop().slideDown();
+		}
 	});
 });
 </script>
@@ -67,7 +70,10 @@ jQuery(function($){
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
 	$('#accordion dt').on('click', function () {
-		$(this).next().slideToggle();
+		if (!$(this).hasClass('is-active')) {
+			$('.is-active').removeClass('is-active').next().stop().slideUp();
+			$(this).addClass('is-active').next().stop().slideDown();
+		}
 	});
 });</code></pre>
 

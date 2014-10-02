@@ -28,9 +28,15 @@ tags: accordion
 <script type="text/javascript">
 jQuery(function($){
 	$('#accordion dt').on('click', function () {
-		$(this).next().animate({
-			width: 'toggle'
-		}, 'slow');
+		if(!$(this).hasClass('is-active')) {
+			$('.is-active').removeClass('is-active')
+				.next().stop().animate({
+					width: 'hide'
+				}, 'slow');
+			$(this).addClass('is-active').next().animate({
+				width: 'show'
+			}, 'slow');
+		}
 	});
 });
 </script>
@@ -69,24 +75,37 @@ jQuery(function($){
 #accordion dd {
 	float: left;
 	display: none;
-	width: 1000px;
+	width: 600px;
 	border: solid #34495e;
 	border-width: 1px 0 1px 1px;
 	margin: 0;
+	padding: 0;
+	height: 210px;
+	overflow: hidden;
+}
+#accordion dd div {
 	padding: 10px;
-	height: 190px;
 }
 #accordion dd:first-of-type {
 	display: block;
+}
+#accordion dd:last-of-type {
+	border-width: 1px;
 }
 </style>
 
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
 	$('#accordion dt').on('click', function () {
-		$(this).next().animate({
-			width: 'toggle'
-		}, 'slow');
+		if(!$(this).hasClass('is-active')) {
+			$('.is-active').removeClass('is-active')
+				.next().stop().animate({
+					width: 'hide'
+				}, 'slow');
+			$(this).addClass('is-active').next().animate({
+				width: 'show'
+			}, 'slow');
+		}
 	});
 });</code></pre>
 
@@ -140,15 +159,22 @@ jQuery(function($){
 #accordion dd {
 	float: left;
 	display: none;
-	width: 1000px;
+	width: 600px;
 	border: solid #34495e;
 	border-width: 1px 0 1px 1px;
 	margin: 0;
+	padding: 0;
+	height: 210px;
+	overflow: hidden;
+}
+#accordion dd div {
 	padding: 10px;
-	height: 190px;
 }
 #accordion dd:first-of-type {
 	display: block;
+}
+#accordion dd:last-of-type {
+	border-width: 1px;
 }</code></pre>
 
 <h3>Demo</h3>
@@ -156,15 +182,15 @@ jQuery(function($){
 <div id="accordion">
 	<dl>
 		<dt class="is-active">見出し１</dt>
-		<dd>コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ</dd>
+		<dd><div>コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ</div></dd>
 		<dt>見出し２</dt>
-		<dd>コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ</dd>
+		<dd><div>コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ</div></dd>
 		<dt>見出し３</dt>
-		<dd>コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ</dd>
+		<dd><div>コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ３コンテンツ</div></dd>
 		<dt>見出し４</dt>
-		<dd>コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ</dd>
+		<dd><div>コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ４コンテンツ</div></dd>
 		<dt>見出し５</dt>
-		<dd>コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ</dd>
+		<dd><div>コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ５コンテンツ</div></dd>
 	</dl>
 </div>
 </div>

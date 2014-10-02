@@ -44,7 +44,8 @@
 <script type="text/javascript">
 jQuery(function($){
 	$('#accordion dt').on('click', function () {
-		$(this).next().slideToggle();
+		// $(this).toggleClass('is-active');
+		$(this).toggleClass('is-active').next().stop().slideToggle();
 	});
 });
 </script>
@@ -81,7 +82,8 @@ jQuery(function($){
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
 	$('#accordion dt').on('click', function () {
-		$(this).next().slideToggle();
+		// $(this).toggleClass('is-active');
+		$(this).toggleClass('is-active').next().stop().slideToggle();
 	});
 });</code></pre>
 
