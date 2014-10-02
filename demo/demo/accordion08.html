@@ -8,7 +8,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width">
-  <title>アコーディオン機能 ステップ７ |  JavaScript&amp; jQuery Study</title>
+  <title>アコーディオン機能 アニメーション演習 |  JavaScript&amp; jQuery Study</title>
   <link rel="stylesheet" href="../css/style.css">
       
     <script src="../js/lib/jquery-2.0.3.min.js"></script>
@@ -25,7 +25,7 @@
 
   <div id="contents">
     <div id="main">
-<h2>アコーディオン機能 ステップ７（実演）</h2>
+<h2>アコーディオン機能 アニメーション演習</h2>
 
 <section class="section">
 	<header class="sectionHeader">
@@ -48,11 +48,23 @@ jQuery(function($){
 	$('#accordion dt').on('click', function () {
 		if(!$(this).hasClass('is-active')) {
 			$('.is-active').removeClass('is-active')
-				.next().stop().animate({
-					width: 'hide'
+				.next().stop()
+				.animate({
+					width: 0,
+					paddingLeft: '0px',
+					paddingRight: '0px'
 				}, 'slow');
-			$(this).addClass('is-active').next().animate({
-				width: 'show'
+			$(this).addClass('is-active').next()
+			.css({
+					width: 0,
+					// fontSize: 0,
+					display: 'block'
+				})
+			.animate({
+				// fontSize: '30px',
+				paddingLeft: '50px',
+				paddingRight: '50px',
+				width: '700px'
 			}, 'slow');
 		}
 	});
@@ -115,15 +127,9 @@ jQuery(function($){
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
 	$('#accordion dt').on('click', function () {
-		if(!$(this).hasClass('is-active')) {
-			$('.is-active').removeClass('is-active')
-				.next().stop().animate({
-					width: 'hide'
-				}, 'slow');
-			$(this).addClass('is-active').next().animate({
-				width: 'show'
-			}, 'slow');
-		}
+		$(this).next().animate({
+			width: 'toggle'
+		}, 'slow');
 	});
 });</code></pre>
 
@@ -177,22 +183,15 @@ jQuery(function($){
 #accordion dd {
 	float: left;
 	display: none;
-	width: 600px;
+	width: 1000px;
 	border: solid #34495e;
 	border-width: 1px 0 1px 1px;
 	margin: 0;
-	padding: 0;
-	height: 210px;
-	overflow: hidden;
-}
-#accordion dd div {
 	padding: 10px;
+	height: 190px;
 }
 #accordion dd:first-of-type {
 	display: block;
-}
-#accordion dd:last-of-type {
-	border-width: 1px;
 }</code></pre>
 
 <h3>Demo</h3>
