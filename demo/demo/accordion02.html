@@ -1,33 +1,49 @@
----
-layout: default
-title: アコーディオン機能 ステップ１
-jqv: false
-script_head: true
-categories: accordion
-tags: accordion
----
+<!DOCTYPE html>
+<html lang="ja">
 
-<h2>アコーディオン機能 ステップ１</h2>
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>アコーディオン機能 ステップ２ |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+<h2>アコーディオン機能 ステップ２</h2>
 
 <section class="section">
 	<header class="sectionHeader">
-		<h3>どのような動きをするのか仕様を考える</h3>
+		<h3>徐々に理想の仕様に近づける</h3>
 	</header>
 	<div class="sectionContents">
-		<p>まずはシンプルなところから</p>
-		<ul>
-			<li>初期状態：JavaScriptでコンテンツは非表示</li>
+		<ul class="pt30">
+			<li>初期状態：<span class="green">CSS</span>でコンテンツは非表示</li>
 			<li>見出しをクリック</li>
-			<li>見出しの次の要素が開く</li>
+			<li>見出しの次の要素が<span class="green">縦エフェクトで</span>開く</li>
 		</ul>
 	</div>
 </section>
 
 <script type="text/javascript">
 jQuery(function($){
-	$('#accordion dd').hide();
 	$('#accordion dt').on('click', function () {
-		$(this).next().toggle();
+		$(this).next().slideToggle();
 	});
 });
 </script>
@@ -52,6 +68,7 @@ jQuery(function($){
 	background-color: #34495e;
 }
 #accordion dd {
+	display: none;
 	border: solid #34495e;
 	border-width: 0 1px 1px 1px;
 	margin: 0;
@@ -61,9 +78,8 @@ jQuery(function($){
 
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
-	$('#accordion dd').hide();
 	$('#accordion dt').on('click', function () {
-		$(this).next().toggle();
+		$(this).next().slideToggle();
 	});
 });</code></pre>
 
@@ -103,6 +119,7 @@ jQuery(function($){
 	background-color: #34495e;
 }
 #accordion dd {
+	display: none;
 	border: solid #34495e;
 	border-width: 0 1px 1px 1px;
 	margin: 0;
@@ -127,3 +144,11 @@ jQuery(function($){
 </div>
 </div>
 
+
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>

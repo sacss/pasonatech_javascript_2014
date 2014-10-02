@@ -1,33 +1,51 @@
----
-layout: default
-title: アコーディオン機能 ステップ１
-jqv: false
-script_head: true
-categories: accordion
-tags: accordion
----
+<!DOCTYPE html>
+<html lang="ja">
 
-<h2>アコーディオン機能 ステップ１</h2>
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>アコーディオン機能 ステップ５ |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+<h2>アコーディオン機能 ステップ５（実演）</h2>
 
 <section class="section">
 	<header class="sectionHeader">
-		<h3>どのような動きをするのか仕様を考える</h3>
+		<h3>仕様を変える：マルチオープンをシングルオープンに</h3>
 	</header>
 	<div class="sectionContents">
-		<p>まずはシンプルなところから</p>
-		<ul>
-			<li>初期状態：JavaScriptでコンテンツは非表示</li>
+		<ul class="pt30">
+			<li>初期状態：CSSでコンテンツは非表示</li>
 			<li>見出しをクリック</li>
-			<li>見出しの次の要素が開く</li>
+			<li>見出しに開いていることがわかるようにアクティブスタイル追加</li>
+			<li><span class="green">開いているところを閉じる</span></li>
+			<li>見出しの次の要素が縦エフェクトで開く（何度も開かないようにする）</li>
 		</ul>
 	</div>
 </section>
 
 <script type="text/javascript">
 jQuery(function($){
-	$('#accordion dd').hide();
 	$('#accordion dt').on('click', function () {
-		$(this).next().toggle();
+		$(this).next().slideToggle();
 	});
 });
 </script>
@@ -47,11 +65,13 @@ jQuery(function($){
 	cursor: pointer;
 	padding: 5px 10px;
 }
+#accordion dt.is-active,
 #accordion dt:hover {
 	color: #fff;
 	background-color: #34495e;
 }
 #accordion dd {
+	display: none;
 	border: solid #34495e;
 	border-width: 0 1px 1px 1px;
 	margin: 0;
@@ -61,9 +81,8 @@ jQuery(function($){
 
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
-	$('#accordion dd').hide();
 	$('#accordion dt').on('click', function () {
-		$(this).next().toggle();
+		$(this).next().slideToggle();
 	});
 });</code></pre>
 
@@ -98,11 +117,13 @@ jQuery(function($){
 	cursor: pointer;
 	padding: 5px 10px;
 }
+#accordion dt.is-active,
 #accordion dt:hover {
 	color: #fff;
 	background-color: #34495e;
 }
 #accordion dd {
+	display: none;
 	border: solid #34495e;
 	border-width: 0 1px 1px 1px;
 	margin: 0;
@@ -127,3 +148,11 @@ jQuery(function($){
 </div>
 </div>
 
+
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>

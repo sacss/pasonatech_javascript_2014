@@ -1,0 +1,45 @@
+---
+layout: default
+title: ブラウザ分岐 ユーザーエージェント
+jqv: false
+script_head: true
+categories: ua
+tags: ua
+---
+
+<h2>ブラウザ分岐 ユーザーエージェント</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>ブラウザで処理</h3>
+	</header>
+	<div class="sectionContents">
+		<p>ブラウザが持っている、そのブラウザは、何？という情報をJavaScriptでとれる。</p>
+	</div>
+</section>
+
+<script type="text/javascript">
+jQuery(function($){
+	var ua = navigator.userAgent;
+	$('button').on('click', function () {
+		alert(ua);
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	var ua = navigator.userAgent;
+	$('button').on('click', function () {
+		alert(ua);
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;button&gt;ユーザーエージェント&lt;/button&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+<button>ユーザーエージェント</button>
+</div>
+

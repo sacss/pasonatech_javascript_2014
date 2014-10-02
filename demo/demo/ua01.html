@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>ブラウザ分岐 ユーザーエージェント |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+<h2>ブラウザ分岐 ユーザーエージェント</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>ブラウザで処理</h3>
+	</header>
+	<div class="sectionContents">
+		<p>ブラウザが持っている、そのブラウザは、何？という情報をJavaScriptでとれる。</p>
+	</div>
+</section>
+
+<script type="text/javascript">
+jQuery(function($){
+	var ua = navigator.userAgent;
+	$('button').on('click', function () {
+		alert(ua);
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	var ua = navigator.userAgent;
+	$('button').on('click', function () {
+		alert(ua);
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;button&gt;ユーザーエージェント&lt;/button&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+<button>ユーザーエージェント</button>
+</div>
+
+
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>

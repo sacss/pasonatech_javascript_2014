@@ -1,33 +1,51 @@
----
-layout: default
-title: アコーディオン機能 ステップ１
-jqv: false
-script_head: true
-categories: accordion
-tags: accordion
----
+<!DOCTYPE html>
+<html lang="ja">
 
-<h2>アコーディオン機能 ステップ１</h2>
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>アコーディオン機能 ステップ６ |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+<h2>アコーディオン機能 ステップ６（実演）</h2>
 
 <section class="section">
 	<header class="sectionHeader">
-		<h3>どのような動きをするのか仕様を考える</h3>
+		<h3>仕様を変える：常にひとつはひらいておく</h3>
 	</header>
 	<div class="sectionContents">
-		<p>まずはシンプルなところから</p>
-		<ul>
-			<li>初期状態：JavaScriptでコンテンツは非表示</li>
-			<li>見出しをクリック</li>
-			<li>見出しの次の要素が開く</li>
+		<ul class="pt30">
+			<li>初期状態：CSSでコンテンツは非表示<span class="green">（一つ目のみオープン）</span></li>
+			<li>見出しをクリック<span class="green">（すでに開いていたら処理終了）</span></li>
+			<li>見出しに開いていることがわかるようにアクティブスタイル追加</li>
+			<li>開いているところを閉じる</li>
+			<li>見出しの次の要素が縦エフェクトで開く（何度も開かないようにする）</li>
 		</ul>
 	</div>
 </section>
 
 <script type="text/javascript">
 jQuery(function($){
-	$('#accordion dd').hide();
 	$('#accordion dt').on('click', function () {
-		$(this).next().toggle();
+		$(this).next().slideToggle();
 	});
 });
 </script>
@@ -47,30 +65,34 @@ jQuery(function($){
 	cursor: pointer;
 	padding: 5px 10px;
 }
+#accordion dt.is-active,
 #accordion dt:hover {
 	color: #fff;
 	background-color: #34495e;
 }
 #accordion dd {
+	display: none;
 	border: solid #34495e;
 	border-width: 0 1px 1px 1px;
 	margin: 0;
 	padding: 10px;
 }
+#accordion dd:first-of-type {
+	display: block;
+}
 </style>
 
 <h3>Script</h3>
 <pre><code class="language-javascript">jQuery(function($){
-	$('#accordion dd').hide();
 	$('#accordion dt').on('click', function () {
-		$(this).next().toggle();
+		$(this).next().slideToggle();
 	});
 });</code></pre>
 
 <h3>HTML</h3>
 <pre><code class="language-markup">&lt;div id="accordion"&gt;
   &lt;dl&gt;
-    &lt;dt&gt;見出し１&lt;/dt&gt;
+    &lt;dt class="is-active"&gt;見出し１&lt;/dt&gt;
     &lt;dd&gt;コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１&lt;/dd&gt;
     &lt;dt&gt;見出し２&lt;/dt&gt;
     &lt;dd&gt;コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２&lt;/dd&gt;
@@ -98,22 +120,27 @@ jQuery(function($){
 	cursor: pointer;
 	padding: 5px 10px;
 }
+#accordion dt.is-active,
 #accordion dt:hover {
 	color: #fff;
 	background-color: #34495e;
 }
 #accordion dd {
+	display: none;
 	border: solid #34495e;
 	border-width: 0 1px 1px 1px;
 	margin: 0;
 	padding: 10px;
+}
+#accordion dd:first-of-type {
+	display: block;
 }</code></pre>
 
 <h3>Demo</h3>
 <div id="demo" class="mb100">
 <div id="accordion">
 	<dl>
-		<dt>見出し１</dt>
+		<dt class="is-active">見出し１</dt>
 		<dd>コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１コンテンツ１</dd>
 		<dt>見出し２</dt>
 		<dd>コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２コンテンツ２</dd>
@@ -127,3 +154,11 @@ jQuery(function($){
 </div>
 </div>
 
+
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>

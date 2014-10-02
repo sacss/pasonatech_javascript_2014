@@ -1,0 +1,53 @@
+---
+layout: default
+title: ブラウザ分岐 スマートフォン分岐
+jqv: false
+script_head: true
+categories: ua
+tags: ua
+---
+
+<h2>ブラウザ分岐 スマートフォン分岐</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>スマートフォンかどうか</h3>
+	</header>
+	<div class="sectionContents">
+		<p>ユーザーエージェントの分岐を使って、スマートフォンかどうかの分岐をします</p>
+	</div>
+</section>
+
+<script type="text/javascript">
+jQuery(function($){
+	var ua = navigator.userAgent;
+	$('button').on('click', function () {
+		if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0) {
+			alert('スマートフォンです');
+		} else {
+			alert('いいえ、PCです');
+		}
+	});
+});
+</script>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	var ua = navigator.userAgent;
+	$('button').on('click', function () {
+		if(ua.indexOf('iPhone') > 0 || ua.indexOf('iPod') > 0 || ua.indexOf('Android') > 0) {
+			alert('スマートフォンです');
+		} else {
+			alert('いいえ、PCです');
+		}
+	});
+});</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;button&gt;ユーザーエージェント&lt;/button&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+<button>スマートフォン？</button>
+</div>
+
