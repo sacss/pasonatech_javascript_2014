@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>プラグイン関連 2 プラグインの使い方2 |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+<h2>プラグイン関連 2 プラグインの使い方2</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>利用例を別のエフェクトで：jQuery Color</h3>
+	</header>
+	<div class="sectionContents">
+		<p>参照：<a href="https://github.com/jquery/jquery-color/">jquery/jquery-color</a></p>
+		<h4>読み込み</h4>
+		<pre><code class="language-markup">&lt;script src=&quot;js/jquery-2.0.3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.color-2.1.2.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+	</div>
+</section>
+
+<script src="../js/lib/jquery.color-2.1.2.min.js"></script>
+<script>
+jQuery(function($){
+	$('button.white_effect01').on('click', function () {
+		var $demoBlock = $('.demo__block--type2');
+		if(!$demoBlock.hasClass('is-white')) {
+			$demoBlock.filter(':not(:animated)').animate({
+				backgroundColor: '#f0f'
+			}, 1000, function () {
+				$(this).addClass('is-white');
+			});
+		} else {
+			$demoBlock.filter(':not(:animated)').animate({
+				backgroundColor: '#0f0'
+			}, 1000, function () {
+				$(this).removeClass('is-white');
+			});
+		}
+		
+	});
+});
+</script>
+
+<style>
+.demo__block--type2 {
+	width: 100%;
+	height: 200px;
+	background-color: #0f0;
+}
+</style>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('button.white_effect01').on('click', function () {
+		var $demoBlock = $('.demo__block--type2');
+		if(!$demoBlock.hasClass('is-white')) {
+			$demoBlock.filter(':not(:animated)').animate({
+				backgroundColor: '#f0f'
+			}, 1000, function () {
+				$(this).addClass('is-white');
+			});
+		} else {
+			$demoBlock.filter(':not(:animated)').animate({
+				backgroundColor: '#0f0'
+			}, 1000, function () {
+				$(this).removeClass('is-white');
+			});
+		}
+		
+	});
+});</code></pre>
+
+<h3>CSS</h3>
+<pre><code class="language-css">.demo__block--type2 {
+	width: 100%;
+	height: 200px;
+	background-color: #000;
+}</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;div id=&quot;demo&quot; class=&quot;mb100&quot;&gt;
+&lt;button&gt;色変更&lt;/button&gt;
+&lt;div class=&quot;demo__block--type2&quot;&gt;&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+<button class="white_effect01 mb15">色変更</button>
+<div class="demo__block--type2"></div>
+</div>
+
+
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>

@@ -1,0 +1,69 @@
+---
+layout: default
+title: プラグイン関連 7 イメージスライダー（カルーセル）
+jqv: false
+script_head: true
+categories: plugin
+tags: plugin
+---
+
+<h2>プラグイン関連 7 イメージスライダー（カルーセル）</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>スライダープラグイン</h3>
+	</header>
+	<div class="sectionContents">
+		<p>メインビジュアルなどで複数枚の画像を、左右やフェードなどで切り替えて見せるプラグインです</p>
+		<p>ユーザビリティー視点でみると１枚目しかほぼ意味無いですが、実装としてよく依頼がきます。</p>
+		<p>参照：<a href="http://bxslider.com/">jQuery Content Slider | Responsive jQuery Slider | bxSlider</a></p>
+	</div>
+</section>
+
+<script src="../js/lib/jquery.bxslider.min.js"></script>
+<script>
+jQuery(function($){
+	$('.bxslider').bxSlider();
+});
+</script>
+
+<style>
+.bx-wrapper {
+	max-width: 480px !important;
+}
+</style>
+
+<link href="../css/jquery.bxslider.css" rel="stylesheet">
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('.bxslider').bxSlider();
+});</code></pre>
+
+
+<h3>CSS</h3>
+<pre><code class="language-css">.bx-wrapper {
+	max-width: 480px !important;
+}</code></pre>
+
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;div id=&quot;demo&quot; class=&quot;mb100&quot;&gt;
+	&lt;ul class=&quot;bxslider&quot;&gt;
+		&lt;li&gt;&lt;img src=&quot;../img/pic1.jpg&quot; /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src=&quot;../img/pic2.jpg&quot; /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src=&quot;../img/pic3.jpg&quot; /&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;img src=&quot;../img/pic4.jpg&quot; /&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+	<ul class="bxslider">
+		<li><img src="../img/img01.jpg" /></li>
+		<li><img src="../img/img02.jpg" /></li>
+		<li><img src="../img/img03.jpg" /></li>
+		<li><img src="../img/img04.jpg" /></li>
+	</ul>
+</div>
+

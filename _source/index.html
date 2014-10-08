@@ -74,4 +74,14 @@ tags: top index
             {% endif %}{% endfor %}
           </ul>
         </div>
+        <header class="sectionHeader">
+          <h3>プラグイン関連</h3>
+        </header>
+        <div class="sectionContents">
+          <ul class="list01 mb0">
+            {% for pages in site.pages %}{% if pages.categories contains 'plugin' %}
+            <li><a href=".{{ pages.url }}">{{ pages.title }}</a></li>
+            {% endif %}{% endfor %}
+          </ul>
+        </div>
       </section>

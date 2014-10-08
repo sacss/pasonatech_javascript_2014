@@ -1,0 +1,63 @@
+---
+layout: default
+title: プラグイン関連 8 イメージモーダルウィンドウ
+jqv: false
+script_head: true
+categories: plugin
+tags: plugin
+---
+
+<h2>プラグイン関連 8 イメージモーダルウィンドウ</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>lightboxプラグイン</h3>
+	</header>
+	<div class="sectionContents">
+		<p>画像の拡大表示などで利用できるプラグインです</p>
+		<p>参照：<a href="http://lokeshdhakar.com/projects/lightbox2/">Lightbox</a></p>
+	</div>
+</section>
+
+<script src="../js/lib/lightbox.min.js"></script>
+<style>
+.lightbox-demo {
+	overflow: hidden;
+	list-style-type: none;
+}
+
+.lightbox-demo li {
+	float: left;
+	margin: 10px;
+
+}
+</style>
+
+<link href="../css/lightbox.css" rel="stylesheet">
+
+<h3>CSS</h3>
+<pre><code class="language-css">.bx-wrapper {
+	max-width: 480px !important;
+}</code></pre>
+
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;div id=&quot;demo&quot; class=&quot;mb100&quot;&gt;
+	&lt;ul class=&quot;bxslider&quot;&gt;
+		&lt;li&gt;&lt;a href=&quot;../img/img01.jpg&quot; data-lightbox=&quot;lightbox&quot;&gt;&lt;img src=&quot;../img/img01.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;../img/img02.jpg&quot; data-lightbox=&quot;lightbox&quot;&gt;&lt;img src=&quot;../img/img02.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;../img/img03.jpg&quot; data-lightbox=&quot;lightbox&quot;&gt;&lt;img src=&quot;../img/img03.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+		&lt;li&gt;&lt;a href=&quot;../img/img04.jpg&quot; data-lightbox=&quot;lightbox&quot;&gt;&lt;img src=&quot;../img/img04.jpg&quot; /&gt;&lt;/a&gt;&lt;/li&gt;
+	&lt;/ul&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+	<ul class="lightbox-demo">
+		<li><a href="../img/img01.jpg" data-lightbox="lightbox"><img src="../img/img01.jpg" /></a></li>
+		<li><a href="../img/img02.jpg" data-lightbox="lightbox"><img src="../img/img02.jpg" /></a></li>
+		<li><a href="../img/img03.jpg" data-lightbox="lightbox"><img src="../img/img03.jpg" /></a></li>
+		<li><a href="../img/img04.jpg" data-lightbox="lightbox"><img src="../img/img04.jpg" /></a></li>
+	</ul>
+</div>
+

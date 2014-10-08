@@ -1,0 +1,133 @@
+---
+layout: default
+title: プラグイン関連 3 エフェクトの緩急 1
+jqv: false
+script_head: true
+categories: plugin
+tags: plugin
+---
+
+<h2>プラグイン関連 3 エフェクトの緩急 1</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>エフェクトの緩急 1</h3>
+	</header>
+	<div class="sectionContents">
+		<p>エフェクトで同じ時間動かすにしても、その緩急のつけかた次第で、全く別の動きに見えるようになります。</p>
+		<p>まずこのページでは、jQueryのデフォルトで用意されいてる緩急を見てみましょう</p>
+	</div>
+</section>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>linear（リニア）とswing</h3>
+	</header>
+	<div class="sectionContents">
+		<p>デフォルトで用意されている緩急（easing）は、linearとslingの２つです。</p>
+		<p>この２つの違いを見てみましょう</p>
+	</div>
+</section>
+
+<script>
+jQuery(function($){
+	var i = 0;
+	$('button').on('click', function () {
+		var mleft = (i % 2)? 0 : '80%';
+		$('.default').stop().animate({
+			marginLeft: mleft
+		}, 2000);
+		$('.linear').stop().animate({
+			marginLeft: mleft
+		}, 2000, 'linear');
+		$('.swing').stop().animate({
+			marginLeft: mleft
+		}, 2000, 'swing');
+		i++;
+	});
+});
+</script>
+
+<style>
+.easing-demo {
+	position: relative;
+	height: 300px;
+}
+.easing-demo li {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	background-color: #F92672;
+}
+.easing-demo li.linear {
+	top: 70px;
+}
+.easing-demo li.swing {
+	top: 130px;
+}
+</style>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	var i = 0;
+	$('button').on('click', function () {
+		var mleft = (i % 2)? 0 : '80%';
+		$('.default').stop().animate({
+			marginLeft: mleft
+		}, 2000);
+		$('.linear').stop().animate({
+			marginLeft: mleft
+		}, 2000, 'linear');
+		$('.swing').stop().animate({
+			marginLeft: mleft
+		}, 2000, 'swing');
+		i++;
+	});
+});</code></pre>
+
+<h3>CSS</h3>
+<pre><code class="language-css">.easing-demo {
+	position: relative;
+	height: 300px;
+}
+.easing-demo li {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	background-color: #F92672;
+}
+.easing-demo li.linear {
+	top: 70px;
+}
+.easing-demo li.swing {
+	top: 130px;
+}</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;div id=&quot;demo&quot; class=&quot;mb100&quot;&gt;
+	&lt;button class=&quot;mb15&quot;&gt;エフェクト&lt;/button&gt;
+	&lt;div class=&quot;easing-demo&quot;&gt;
+		&lt;ul&gt;
+			&lt;li class=&quot;default&quot;&gt;&lt;/li&gt;
+			&lt;li class=&quot;linear&quot;&gt;&lt;/li&gt;
+			&lt;li class=&quot;swing&quot;&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+	<button class="mb15">エフェクト</button>
+	<div class="easing-demo">
+		<ul>
+			<li class="default"></li>
+			<li class="linear"></li>
+			<li class="swing"></li>
+		</ul>
+	</div>
+</div>
+

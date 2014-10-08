@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+
+
+
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width">
+  <title>プラグイン関連 1 プラグインの使い方 |  JavaScript&amp; jQuery Study</title>
+  <link rel="stylesheet" href="../css/style.css">
+      
+    <script src="../js/lib/jquery-2.0.3.min.js"></script>
+    
+</head>
+
+  <body>
+
+<header id="header" class="navbar">
+  <div class="navbar-inner">
+    <a href="../">JavaScript &amp; jQuery Study</a>
+  </div>
+</header>
+
+  <div id="contents">
+    <div id="main">
+<h2>プラグイン関連 1 プラグインの使い方</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>プラグインとは</h3>
+	</header>
+	<div class="sectionContents">
+		<p>jQuery の本体は、JavaScript を簡単に扱うためのメソッドが詰まったライブラリですが、jQuery 単体ではその機能を準備するだけ、動かしたりなどはしてくれません。</p>
+		<p>それをさらに機能くわえたり、特定の動きの指示を予めいれて要素だけを指定するだけにしたようなものを「プラグイン」といいます。jQuery</p>
+		<p>ここまで解説してきたタブやアコーディオン機能なども、HTMLとclassと、僅かなスクリプトを書くだけで使えるようにしてくれたりするものもあります。</p>
+		<p>ここではそんなプラグインの使い方を簡単に解説します。</p>
+	</div>
+</section>
+
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>プラグインの基本的な使い方</h3>
+	</header>
+	<div class="sectionContents">
+		<h4>読み込み場所</h4>
+		<p>jQueryの本体を読み込んだあとにプラグインを指定して読み込み、その後にプラグインを使うためのコードをかきます。</p>
+		<pre><code class="language-markup">&lt;script src=&quot;js/jquery-2.0.3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/plugin.js&quot;&gt;&lt;/script&gt;</code></pre>
+	</div>
+</section>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>利用例：jQuery Color</h3>
+	</header>
+	<div class="sectionContents">
+		<p>参照：<a href="https://github.com/jquery/jquery-color/">jquery/jquery-color</a></p>
+		<h4>読み込み</h4>
+		<pre><code class="language-markup">&lt;script src=&quot;js/jquery-2.0.3.min.js&quot;&gt;&lt;/script&gt;
+&lt;script src=&quot;js/jquery.color-2.1.2.min.js&quot;&gt;&lt;/script&gt;</code></pre>
+	</div>
+</section>
+
+<script src="../js/lib/jquery.color-2.1.2.min.js"></script>
+<script>
+jQuery(function($){
+	$('button.white_effect01').on('click', function () {
+		var $demoBlock = $('.demo__block--type1');
+		if(!$demoBlock.hasClass('is-white')) {
+			$demoBlock.stop().animate({
+				backgroundColor: '#fff'
+			}, 1000).addClass('is-white');
+		} else {
+			$demoBlock.stop().animate({
+				backgroundColor: '#000'
+			}, 1000).removeClass('is-white');
+		}
+	});
+});
+</script>
+
+<style>
+.demo__block--type1 {
+	width: 100%;
+	height: 200px;
+	background-color: #000;
+}
+</style>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	$('button.white_effect01').on('click', function () {
+		var $demoBlock = $('.demo__block');
+		if(!$demoBlock.hasClass('is-white')) {
+			$('.demo__block--type1').stop().animate({
+				backgroundColor: '#fff'
+			}, 1000).addClass('is-white');
+		} else {
+			$('.demo__block--type1').stop().animate({
+				backgroundColor: '#000'
+			}, 1000).removeClass('is-white');
+		}
+	});
+});</code></pre>
+
+<h3>CSS</h3>
+<pre><code class="language-css">.demo__block--type1 {
+	width: 100%;
+	height: 200px;
+	background-color: #000;
+}</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;div id=&quot;demo&quot; class=&quot;mb100&quot;&gt;
+&lt;button&gt;色変更&lt;/button&gt;
+&lt;div class=&quot;demo__block--type1&quot;&gt;&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+<button class="white_effect01 mb15">色変更</button>
+<div class="demo__block--type1"></div>
+</div>
+
+
+    </div>
+  </div>
+
+
+<script src="../js/lib/prism.js"></script>
+  </body>
+</html>

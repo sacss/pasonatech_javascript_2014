@@ -1,0 +1,197 @@
+---
+layout: default
+title: プラグイン関連 4 エフェクトの緩急 3
+jqv: false
+script_head: true
+categories: plugin
+tags: plugin
+---
+
+<h2>プラグイン関連 4 エフェクトの緩急 2</h2>
+
+<section class="section">
+	<header class="sectionHeader">
+		<h3>エフェクトの緩急 2</h3>
+	</header>
+	<div class="sectionContents">
+		<p>jQueryのデフォルトで用意されている緩急の種類は少ないのですが、それを補うプラグインが「jQuery Easing Plugin」です</p>
+		<p>参照：<a href="http://gsgd.co.uk/sandbox/jquery/easing/">jQuery Easing Plugin</a></p>
+		<p>参照：<a href="https://github.com/gdsmith/jquery.easing">gdsmith/jquery.easing</a></p>
+		<p>参照：<a href="http://easings.net/ja">Easing Function 早見表</a></p>
+		<p>デモを通してどのような管球になるか見てみましょう</p>
+	</div>
+</section>
+
+<script src="../js/lib/jquery.easing.1.3.min.js"></script>
+<script>
+jQuery(function($){
+	var i = 0;
+	$('#easing1').after($('#easing1').clone().attr('id', 'easing2'));
+	$('#easing2').after($('#easing1').clone().attr('id', 'easing3'));
+	$('button').on('click', function () {
+		var mleft = (i % 2)? 0 : '80%';
+		$('.type1').stop().animate({
+			marginLeft: mleft
+		}, 2000, $('#easing1').val());
+		$('.type2').stop().animate({
+			marginLeft: mleft
+		}, 2000, $('#easing2').val());
+		$('.type3').stop().animate({
+			marginLeft: mleft
+		}, 2000, $('#easing3').val());
+		i++;
+	});
+});
+</script>
+
+<style>
+#demo select {
+	margin-right: 10px;
+}
+.easing-demo {
+	position: relative;
+	height: 300px;
+}
+.easing-demo li {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	background-color: #F92672;
+}
+.easing-demo li.type2 {
+	top: 70px;
+}
+.easing-demo li.type3 {
+	top: 130px;
+}
+</style>
+
+<h3>Script</h3>
+<pre><code class="language-javascript">jQuery(function($){
+	var i = 0;
+	$('button').on('click', function () {
+		var mleft = (i % 2)? 0 : '80%';
+		var easingFn = $('#easing').val();
+		$('.default').stop().animate({
+			marginLeft: mleft
+		}, 2000, easingFn);
+		i++;
+	});
+});</code></pre>
+
+<h3>CSS</h3>
+<pre><code class="language-css">#demo select {
+	margin-right: 10px;
+}
+.easing-demo {
+	position: relative;
+	height: 300px;
+}
+.easing-demo li {
+	position: absolute;
+	top: 10px;
+	left: 0;
+	width: 50px;
+	height: 50px;
+	background-color: #F92672;
+}
+.easing-demo li.type2 {
+	top: 70px;
+}
+.easing-demo li.type3 {
+	top: 130px;
+}
+</code></pre>
+
+<h3>HTML</h3>
+<pre><code class="language-markup">&lt;div id=&quot;demo&quot; class=&quot;mb100&quot;&gt;
+	&lt;button class=&quot;mb15&quot;&gt;エフェクト&lt;/button&gt;
+	&lt;select name=&quot;easing1&quot; id=&quot;easing&quot;&gt;
+		&lt;option value=&quot;swing&quot; selected=&quot;selected&quot;&gt;swing&lt;/option&gt;
+		&lt;option value=&quot;linear&quot;&gt;linear&lt;/option&gt;
+		&lt;option value=&quot;easeInSine&quot;&gt;easeInSine&lt;/option&gt;
+		&lt;option value=&quot;easeOutSine&quot;&gt;easeOutSine&lt;/option&gt;
+		&lt;option value=&quot;easeInOutSine&quot;&gt;easeInOutSine&lt;/option&gt;
+		&lt;option value=&quot;easeInQuad&quot;&gt;easeInQuad&lt;/option&gt;
+		&lt;option value=&quot;easeOutQuad&quot;&gt;easeOutQuad&lt;/option&gt;
+		&lt;option value=&quot;easeInOutQuad&quot;&gt;easeInOutQuad&lt;/option&gt;
+		&lt;option value=&quot;easeInCubic&quot;&gt;easeInCubic&lt;/option&gt;
+		&lt;option value=&quot;easeOutCubic&quot;&gt;easeOutCubic&lt;/option&gt;
+		&lt;option value=&quot;easeInOutCubic&quot;&gt;easeInOutCubic&lt;/option&gt;
+		&lt;option value=&quot;easeInQuart&quot;&gt;easeInQuart&lt;/option&gt;
+		&lt;option value=&quot;easeOutQuart&quot;&gt;easeOutQuart&lt;/option&gt;
+		&lt;option value=&quot;easeInOutQuart&quot;&gt;easeInOutQuart&lt;/option&gt;
+		&lt;option value=&quot;easeInQuint&quot;&gt;easeInQuint&lt;/option&gt;
+		&lt;option value=&quot;easeOutQuint&quot;&gt;easeOutQuint&lt;/option&gt;
+		&lt;option value=&quot;easeInOutQuint&quot;&gt;easeInOutQuint&lt;/option&gt;
+		&lt;option value=&quot;easeInExpo&quot;&gt;easeInExpo&lt;/option&gt;
+		&lt;option value=&quot;easeOutExpo&quot;&gt;easeOutExpo&lt;/option&gt;
+		&lt;option value=&quot;easeInOutExpo&quot;&gt;easeInOutExpo&lt;/option&gt;
+		&lt;option value=&quot;easeInCirc&quot;&gt;easeInCirc&lt;/option&gt;
+		&lt;option value=&quot;easeOutCirc&quot;&gt;easeOutCirc&lt;/option&gt;
+		&lt;option value=&quot;easeInOutCirc&quot;&gt;easeInOutCirc&lt;/option&gt;
+		&lt;option value=&quot;easeInBack&quot;&gt;easeInBack&lt;/option&gt;
+		&lt;option value=&quot;easeOutBack&quot;&gt;easeOutBack&lt;/option&gt;
+		&lt;option value=&quot;easeInOutBack&quot;&gt;easeInOutBack&lt;/option&gt;
+		&lt;option value=&quot;easeInElastic&quot;&gt;easeInElastic&lt;/option&gt;
+		&lt;option value=&quot;easeOutElastic&quot;&gt;easeOutElastic&lt;/option&gt;
+		&lt;option value=&quot;easeInOutElastic&quot;&gt;easeInOutElastic&lt;/option&gt;
+		&lt;option value=&quot;easeInBounce&quot;&gt;easeInBounce&lt;/option&gt;
+		&lt;option value=&quot;easeOutBounce&quot;&gt;easeOutBounce&lt;/option&gt;
+		&lt;option value=&quot;easeInOutBounce&quot;&gt;easeInOutBounce&lt;/option&gt;
+	&lt;/select&gt;
+	&lt;div class=&quot;easing-demo&quot;&gt;
+		&lt;ul&gt;
+			&lt;li class=&quot;default&quot;&gt;&lt;/li&gt;
+		&lt;/ul&gt;
+	&lt;/div&gt;
+&lt;/div&gt;</code></pre>
+
+<h3>Demo</h3>
+<div id="demo" class="mb100">
+	<button class="mb15">エフェクト</button>
+	<select name="easing1" id="easing1">
+		<option value="swing" selected="selected">swing</option>
+		<option value="linear">linear</option>
+		<option value="easeInSine">easeInSine</option>
+		<option value="easeOutSine">easeOutSine</option>
+		<option value="easeInOutSine">easeInOutSine</option>
+		<option value="easeInQuad">easeInQuad</option>
+		<option value="easeOutQuad">easeOutQuad</option>
+		<option value="easeInOutQuad">easeInOutQuad</option>
+		<option value="easeInCubic">easeInCubic</option>
+		<option value="easeOutCubic">easeOutCubic</option>
+		<option value="easeInOutCubic">easeInOutCubic</option>
+		<option value="easeInQuart">easeInQuart</option>
+		<option value="easeOutQuart">easeOutQuart</option>
+		<option value="easeInOutQuart">easeInOutQuart</option>
+		<option value="easeInQuint">easeInQuint</option>
+		<option value="easeOutQuint">easeOutQuint</option>
+		<option value="easeInOutQuint">easeInOutQuint</option>
+		<option value="easeInExpo">easeInExpo</option>
+		<option value="easeOutExpo">easeOutExpo</option>
+		<option value="easeInOutExpo">easeInOutExpo</option>
+		<option value="easeInCirc">easeInCirc</option>
+		<option value="easeOutCirc">easeOutCirc</option>
+		<option value="easeInOutCirc">easeInOutCirc</option>
+		<option value="easeInBack">easeInBack</option>
+		<option value="easeOutBack">easeOutBack</option>
+		<option value="easeInOutBack">easeInOutBack</option>
+		<option value="easeInElastic">easeInElastic</option>
+		<option value="easeOutElastic">easeOutElastic</option>
+		<option value="easeInOutElastic">easeInOutElastic</option>
+		<option value="easeInBounce">easeInBounce</option>
+		<option value="easeOutBounce">easeOutBounce</option>
+		<option value="easeInOutBounce">easeInOutBounce</option>
+	</select>
+	<div class="easing-demo">
+		<ul>
+			<li class="type1"></li>
+			<li class="type2"></li>
+			<li class="type3"></li>
+		</ul>
+	</div>
+</div>
+
